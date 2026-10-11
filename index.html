@@ -910,7 +910,97 @@
 [03:40.15]아주 천천히 말해줄게
 我會慢慢地告訴你`;
 
-    // 匯入 Saddle Up 完整雙語動態歌詞
+    const BLUE_LRC_TEXT = `[00:12.96]Days go by and I’m not feeling better
+日子一天天過去，我卻始終沒有好轉
+[00:18.55]Coffee’s always bitter if it even has a taste
+咖啡總是苦澀，甚至嚐不出一絲滋味
+[00:24.38]And I know why, so watch me get a haircut
+我知道為什麼，就看著我剪去一頭煩惱
+[00:29.91]I know every shortcut to avoid the pain
+我熟知每一條逃避痛苦的捷徑
+[00:34.16]So I don’t have to feel what I need to feel
+只為了不去面對那些本該感受的情緒
+[00:36.78]I keep running from myself
+我始終在逃避自己
+[00:39.93]I don’t have to feel what I need to feel
+只要不去感受，就不必面對那些情緒
+[00:42.28]I keep running from myself
+我一次次逃離自己
+[00:44.90]But there’s just no moving mountains, you’re bound to lose (You’re bound to lose)
+有些高山終究無法繞過，逃避只會讓你注定失敗
+[00:51.54]Gotta let the rain pour down to see the blue (To see the blue)
+唯有讓大雨落下，才能看見蔚藍
+[00:57.14]No point in walking around it if you wanna get out
+若想真正走出去，繞著困境打轉毫無意義
+[01:01.66]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[01:07.23]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[01:15.19]Fake a smile, 난 웃어야만 했고
+強顏歡笑，我只能逼自己笑著
+[01:20.78]떨리는 숨은 삼켜내 들키지 않도록
+將顫抖的呼吸吞回去，不讓任何人察覺
+[01:26.34]Stuck in blue, 언젠간 지나겠지
+困在憂鬱之中，總有一天會過去吧
+[01:32.18]Force a little patience but I stay in bed
+勉強自己再多一點耐心，卻依然躺在床上
+[01:35.92]So I don’t have to feel what I need to feel
+只為了不去面對那些本該感受的情緒
+[01:38.53]I keep running from myself
+我始終在逃避自己
+[01:41.93]I don’t have to feel what I need to feel
+只要不去感受，就不必面對那些情緒
+[01:44.29]I keep running from myself
+我一次次逃離自己
+[01:46.91]But there’s just no moving mountains, you’re bound to lose (You’re bound to lose)
+有些高山終究無法繞過，逃避只會讓你注定失敗
+[01:53.52]Gotta let the rain pour down to see the blue (To see the blue)
+唯有讓大雨落下，才能看見蔚藍
+[01:59.36]No point in walking around it if you wanna get out
+若想真正走出去，繞著困境打轉毫無意義
+[02:03.62]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[02:09.46]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[02:15.03]Yeah, you gotta go, you gotta go
+是啊，你得向前走，不能停在原地
+[02:18.19]You gotta go through
+你必須面對
+[02:21.07]You gotta go, you gotta go
+你得繼續走，不能就此停下
+[02:23.99]You gotta go through
+你必須面對
+[02:26.66]I keep walking, 여전히 겨울에 잠겨
+我仍不停走著，卻依舊深陷寒冬
+[02:31.17]It’s too tight to breathe
+胸口像被緊緊束住，連呼吸都困難
+[02:32.44]But I’ve been holding back my cries (Cries)
+可我始終強忍著淚水，不讓哭聲洩漏
+[02:35.56]That’s why I can’t sleep at night (At night, at night)
+所以每到夜裡，我始終無法入睡
+[02:41.69]It’s just no moving mountains, you’re bound to lose
+有些高山終究無法繞過，逃避只會讓你注定失敗
+[02:47.21]Gotta let the rain pour down to see the blue
+唯有讓大雨落下，才能看見蔚藍
+[02:52.98]No point in walking around it if you wanna get out (Oh)
+若想真正走出去，繞著困境打轉毫無意義
+[02:57.42]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[03:02.99]You gotta go through, you gotta go through
+你必須穿越，你必須面對
+[03:08.71]Yeah, you gotta go, you gotta go (You gotta go through)
+是啊，你得向前走，不能停下（你必須穿越）
+[03:11.85]You gotta go through (You gotta go through)
+你必須走過這一切（你必須面對）
+[03:14.71]You gotta go, you gotta go (You gotta go through)
+你得繼續走，不能就此停下（你必須穿越）
+[03:17.55]You gotta go through (You gotta go through)
+你必須穿越（你必須面對）
+[03:20.17]Yeah, you gotta go, you gotta go
+是啊，你得向前走，不能停在原地
+[03:23.03]You gotta go through
+你必須面對`;
+
     const SADDLE_LRC_TEXT = `[00:00.20]Oh-oh, oh-oh, oh-oh, oh-oh
 [00:03.00]Oh-oh, oh-oh, oh-oh, oh-oh-oh (Ah)
 [00:05.76]Oh-oh, oh-oh, oh-oh, oh-oh
@@ -1022,6 +1112,132 @@
 [03:45.15]Oh-oh, oh-oh, oh-oh
 [03:47.27]Saddle up`;
 
+    const BE_BE_YOUR_LOVE_LRC_TEXT = `[00:10.61]If I could take you away
+如果我能帶你遠走高飛
+[00:17.24]Pretend I was queen
+假裝自己是女王
+[00:23.31]What would you say?
+你會怎麼回答？
+[00:29.15]Would you think I'm unreal?
+你會覺得這一切不切實際嗎？
+[00:36.80]'Cause everybody's got their way I should feel
+因為每個人都認為，我理應有自己的感受方式
+[00:42.87]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[00:47.06]But I want to be your love
+但我依然渴望成為你的愛
+[00:49.96]Want to be your love, for real
+真真切切地，成為你的愛
+[00:54.96]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[00:58.94]But I want to be your love
+但我依然渴望成為你的愛
+[01:02.12]Want to be your love for real
+真真切切地，成為你的愛
+[01:07.68]Want to be your everything
+渴望成為你的一切
+[01:16.14]Everything's falling, and I am included in that
+一切都在崩塌，而我也身陷其中
+[01:26.73]Oh, how I try to be just okay
+噢，我多麼努力，只想讓自己看起來還好
+[01:39.18]Yeah, but all I ever really wanted was a little piece of you
+但我真正想要的，始終只是你的一點點
+[01:46.03]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[01:50.24]But I want to be your love
+但我依然渴望成為你的愛
+[01:53.14]Want to be your love for real
+真真切切地，成為你的愛
+[01:57.94]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[02:01.86]But I want to be your love
+但我依然渴望成為你的愛
+[02:05.00]Want to be your love for real
+真真切切地，成為你的愛
+[02:10.52]Everything will be alright if you just stay the night
+只要你今晚留下，一切都會好起來
+[02:24.87]Please, sir, don't you walk away
+求求你，別就這樣轉身離開
+[02:51.94]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[02:55.87]But I want to be your love
+但我依然渴望成為你的愛
+[02:58.99]Want to be your love for real
+真真切切地，成為你的愛
+[03:04.02]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[03:07.93]But I want to be your love
+但我依然渴望成為你的愛
+[03:11.06]Want to be your love for real
+真真切切地，成為你的愛
+[03:15.81]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[03:20.00]But I want to be your love
+但我依然渴望成為你的愛
+[03:22.85]Want to be your love for real
+真真切切地，成為你的愛
+[03:27.87]Everybody's talking how I can't be your love
+所有人都說，我不可能成為你的愛
+[03:32.06]But I want to be your love
+但我依然渴望成為你的愛
+[03:34.93]Want to be your love for real
+真真切切地，成為你的愛
+[03:41.01]Want to be your love
+成為你的愛`;
+
+    const WHAT_YOU_WONT_DO_LRC_TEXT = `[00:02.60]I guess you wonder where I've been
+想必你也好奇，我這些日子去了哪裡
+[00:08.39]I searched to find a love within
+我曾試著尋覓，找回心中的愛
+[00:14.46]I came back to let you know
+如今我回來，只為讓你知道
+[00:18.99]Got a thing for you and I can't let go
+我對你情有獨鍾，始終無法放手
+[00:25.83]My friends wonder what is wrong with me
+朋友們都不明白，我究竟怎麼了
+[00:30.35]Well, I'm in a daze from your love, you see
+只因你的愛，令我深深沉醉
+[00:37.18]I came back to let you know
+如今我回來，只為讓你知道
+[00:41.70]Got a thing for you and I can't let it go
+我對你情有獨鍾，始終無法割捨
+[00:48.27]Some people go around the world for love
+有些人為了愛，走遍世界各地
+[00:53.01]But they may never find what they dream of
+卻未必能尋得，夢中所求的愛
+[00:58.26]What you won't do, to do for love
+為了愛，有些事是你無論如何也不願做的
+[01:04.30]You've tried everything, but you don't give up
+你試遍所有方法，卻始終不肯放棄
+[01:09.84]In my world, only you
+在我的世界裡，唯有你
+[01:15.92]Make me do for love what I would not do
+讓我為了愛，做出從前不曾做過的事
+[01:22.80]My friends wonder what is wrong with me
+朋友們都不明白，我究竟怎麼了
+[01:27.53]Well, I'm in a daze from your love, you see
+只因你的愛，令我深深沉醉
+[01:34.15]I came back to let you know
+如今我回來，只為讓你知道
+[01:38.88]Got a thing for you, and I can't let go
+我對你情有獨鍾，始終無法放手
+[01:45.76]And though I only want the best, it's true
+我確實只盼一切都能盡善盡美
+[01:49.96]I can't believe the things I do for you
+卻連自己都難以置信，竟為你做到如此
+[01:55.23]What you won't do, do for love
+為了愛，有些事是你原本不願去做的
+[02:01.58]You've tried everything, but you won't give up
+你試遍所有方法，卻依然不願放棄
+[02:07.41]In my world, only you
+在我的世界裡，唯有你
+[02:13.20]Make me do for love what I would not do
+讓我為了愛，做出從前不曾做過的事
+[02:18.99]Make me do for love what I would not do
+讓我為了愛，做出從前不曾做過的事
+[02:24.54]Make me do for love what I would not do
+讓我為了愛，做出從前不曾做過的事`;
+
     const TWO_PLAYLISTS_DATA = [
       {
         id: "pl_solo",
@@ -1068,7 +1284,7 @@
             imgOffsetY: 0.0,
             duration: 211,
             volume: 0.70,
-            lyrics: []
+            lyrics: parseLrc(BLUE_LRC_TEXT)
           },
           {
             title: "SaddIe Up",
@@ -1082,7 +1298,7 @@
             imgOffsetY: 0.0,
             duration: 230,
             volume: 0.70,
-            lyrics: parseLrc(SADDLE_LRC_TEXT) // 載入新歌詞
+            lyrics: parseLrc(SADDLE_LRC_TEXT)
           },
           {
             title: "Speed of Summer",
@@ -1145,7 +1361,7 @@
             imgOffsetY: 0.0,
             duration: 220,
             volume: 1.6,
-            lyrics: []
+            lyrics: parseLrc(BE_BE_YOUR_LOVE_LRC_TEXT)
           },
           {
             title: "What You Won’t Do For Love",
@@ -1159,7 +1375,7 @@
             imgOffsetY: 0.0,
             duration: 210,
             volume: 1.6,
-            lyrics: []
+            lyrics: parseLrc(WHAT_YOU_WONT_DO_LRC_TEXT)
           },
           {
             title: "YUKON",
@@ -1249,12 +1465,12 @@
       }
     ];
 
-    // 升級 Storage Key 至 v24，確保 Saddle Up 全新歌詞即時載入生效
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v24')) || TWO_PLAYLISTS_DATA;
+    // 更新版本號至 v26，確保新加入的全部歌詞立即生效
+    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v26')) || TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v24', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v26', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -1324,7 +1540,7 @@
     }
 
     /* -------------------------------------------------------------
-     * 3. Three.js 3D (邊緣自動收邊、沉穩慢速自轉、換曲展示)
+     * 3. Three.js 3D
      * ------------------------------------------------------------*/
     const container = document.getElementById('threejs-box');
     const scene = new THREE.Scene();
