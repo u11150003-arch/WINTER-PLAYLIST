@@ -546,6 +546,7 @@
     .btn-order { background: #27272a; color: #d4d4d8; border: 1px solid #3f3f46; font-size: 0.7rem; padding: 2px 5px; }
     .btn-order:disabled { opacity: 0.3; cursor: not-allowed; }
 
+    /* 徹底停用預覽區域的一切點擊與外部導向行為 */
     .preview-card-box {
       background: #101115;
       border: 1px dashed #3f4252;
@@ -556,6 +557,7 @@
       align-items: center;
       margin-bottom: 14px;
       cursor: default !important;
+      pointer-events: none !important;
     }
     .preview-cover-thumb {
       width: 72px;
@@ -568,6 +570,7 @@
       position: relative;
       overflow: hidden;
       cursor: default !important;
+      pointer-events: none !important;
     }
   </style>
 
@@ -581,6 +584,7 @@
 </head>
 <body>
 
+  <!-- 原生音訊：跨域串流、自動預載以支援鎖屏背景播放 -->
   <audio id="native-audio" playsinline preload="auto" crossorigin="anonymous"></audio>
   <iframe id="yt-hidden-player" style="position:absolute; top:-9999px; left:-9999px; width:1px; height:1px;" frameborder="0" allow="autoplay; encrypted-media"></iframe>
 
@@ -633,13 +637,12 @@
     </div>
   </footer>
 
-  <!-- 右上角導覽選單 (現代線條圖標、重整功能與說明欄位) -->
+  <!-- 右上角導覽選單 -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
       <div style="display:flex; flex-direction:column; gap:4px; margin-top:14px;">
         
-        <!-- 重新整理按鍵 -->
         <div class="menu-link-item" id="menu-btn-reset">
           <div class="menu-left-content">
             <svg class="menu-icon-svg" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
@@ -648,7 +651,6 @@
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </div>
 
-        <!-- 導覽連結 -->
         <a class="menu-link-item" href="https://u11150003-arch.github.io/2027-winter-bday-desktop/" target="_blank" rel="noopener">
           <div class="menu-left-content">
             <svg class="menu-icon-svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -682,7 +684,6 @@
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </a>
 
-        <!-- 管理者入口 -->
         <div class="menu-link-item" id="menu-btn-admin">
           <div class="menu-left-content">
             <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -694,13 +695,11 @@
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </div>
 
-        <!-- 說明提示欄位 1 -->
         <div class="menu-info-box" style="margin-top:6px;">
           <svg class="menu-info-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <div>若歌曲或圖示無法順利載入，點擊上方「Reset Playlist 重新整理」。</div>
         </div>
 
-        <!-- 說明提示欄位 2 -->
         <div class="menu-info-box">
           <svg class="menu-info-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           <div>手機點擊「分享」&gt;「加入主畫面」，即可享最佳聆聽體驗。</div>
@@ -760,8 +759,7 @@
           <h4 id="form-mode-title" style="color:#fafafa; font-size:0.85rem; margin-bottom:8px;">✦ 新增歌曲</h4>
           <input type="hidden" id="edit-song-id" value="">
 
-          <!-- 純預覽區塊，點擊不跳轉任何外部網址 -->
-          <div class="preview-card-box" onclick="event.stopPropagation();">
+          <div class="preview-card-box">
             <div class="preview-cover-thumb" id="preview-box-thumb"></div>
             <div style="flex:1; min-width:0;">
               <div style="font-size:0.72rem; color:#60a5fa; font-weight:bold;">✦ 即時預覽 (LIVE PREVIEW)</div>
@@ -1278,7 +1276,6 @@
 [05:08.75]어떡하죠 이젠
 我究竟該怎麼辦？`;
 
-    // 匯入 Voyage 完整雙語動態歌詞
     const VOYAGE_LRC_TEXT = `[00:08.15]짙은 어둠 속을 항해하는 너의 바다에
 在幽深黑暗中，航行於你的海上
 [00:13.66]내가 잠시나마 등대가 돼 널 비춰준다면
@@ -2084,12 +2081,12 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
     ];
 
-    // 更新版本號至 v42，確保 Voyage 最新歌詞與系統設定全面生效
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v42')) || TWO_PLAYLISTS_DATA;
+    // 更新版本號至 v44，保證最新動態歌詞與排版規則完整套用
+    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v44')) || TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v42', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v44', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2520,7 +2517,10 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     });
     nativeAudio.addEventListener('playing', () => setPlayState(true));
     nativeAudio.addEventListener('pause', () => setPlayState(false));
-    nativeAudio.addEventListener('ended', () => playNext());
+    nativeAudio.addEventListener('ended', () => {
+      // 確保在背景或鎖屏狀態下持續自動輪播下一首
+      playNext();
+    });
 
     function startYtProgressTimer() {
       clearInterval(ytTimer);
@@ -2549,7 +2549,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
       totalDuration = song.duration || 211;
       const ytId = extractYoutubeId(song.source);
-      // 第二歌單預設 1.60x 音量，第一歌單維持 0.75x
+      // 第二歌單 1.60x 增益，第一歌單維持 0.75x
       const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.60 : 0.75);
 
       if (ytId) {
@@ -2662,7 +2662,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     window.addEventListener('touchend', handleSeekEnd);
 
     /* -------------------------------------------------------------
-     * 6. 歌詞渲染 (切換歌曲強制歸零捲軸)
+     * 6. 歌詞渲染 (切換歌曲強制歸零捲軸，確保首行就定位)
      * ------------------------------------------------------------*/
     function syncLyrics(sec) {
       const song = store[plIdx]?.songs[trackIdx];
@@ -2691,7 +2691,13 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     function renderLyricsList() {
       const scroller = document.getElementById('lyrics-scroller');
       scroller.innerHTML = '';
+      
+      // 切歌時立即瞬移回頂部第一行，不套用 smooth 動畫
+      scroller.style.scrollBehavior = 'auto';
       scroller.scrollTop = 0;
+      setTimeout(() => {
+        scroller.style.scrollBehavior = 'smooth';
+      }, 50);
 
       const song = store[plIdx]?.songs[trackIdx];
 
@@ -2820,7 +2826,6 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       navModal.style.display = 'none';
     };
 
-    // 重新整理回到預設頁面
     document.getElementById('menu-btn-reset').onclick = () => {
       window.location.reload();
     };
