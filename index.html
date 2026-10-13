@@ -94,7 +94,6 @@
       color: #ffffff;
     }
 
-    /* 右上角白色五角星按鈕 */
     .admin-star-btn {
       background: none;
       border: none;
@@ -417,7 +416,6 @@
       letter-spacing: 1px;
     }
 
-    /* 現代簡約線條選單樣式 */
     .menu-link-item {
       display: flex;
       align-items: center;
@@ -458,7 +456,6 @@
       fill: none;
     }
 
-    /* 說明欄位樣式 */
     .menu-info-box {
       display: flex;
       align-items: flex-start;
@@ -1281,6 +1278,92 @@
 [05:08.75]어떡하죠 이젠
 我究竟該怎麼辦？`;
 
+    // 匯入 Voyage 完整雙語動態歌詞
+    const VOYAGE_LRC_TEXT = `[00:08.15]짙은 어둠 속을 항해하는 너의 바다에
+在幽深黑暗中，航行於你的海上
+[00:13.66]내가 잠시나마 등대가 돼 널 비춰준다면
+若我能暫時化作燈塔，照亮你
+[00:19.16]그 순간만큼은 너도 다시 고개를 들고
+至少在那一刻，你也能再次抬起頭
+[00:24.55]너의 머리 위에 꽃 핀 별들을
+你頭頂綻放的繁星
+[00:28.27]바라볼 수 있지 않을까
+能否看見那些星光呢
+[00:52.95]고단했던 하루의 빛을 쏟아내듯
+彷彿傾瀉出疲憊一日所積攢的光芒般
+[00:58.86]너의 눈물은 어둠 속에서 더 빛나고
+你的淚水在黑暗中更加閃耀
+[01:03.94]움츠러진 어깨에 드리우는 그림자
+落在你聳起肩頭的陰影
+[01:09.31]그건 누군가 너의 날개를 감추기 위해
+或許是有人想將你的翅膀藏起
+[01:14.61]어제 지나온 길 위엔
+昨天走過的路上
+[01:17.21]너의 눈물이 남았고
+仍留著你落下的淚水
+[01:19.99]채 마르기도 전에 너는 다시 걷고 있지만
+淚痕尚未乾透，你便再次踏上旅途
+[01:25.77]언젠간 마주할 그날에
+某天相遇的那一刻
+[01:29.95]넌 오늘을 꼭 기억할 거야
+你一定會記得今天
+[01:35.53]짙은 어둠 속을 항해하는 너의 바다에
+在幽深黑暗中，航行於你的海上
+[01:40.91]내가 잠시나마 등대가 돼 널 비춰준다면
+若我能暫時化作燈塔，照亮你
+[01:46.29]그 순간만큼은 너도 다시 고개를 들고
+至少在那一刻，你也能再次抬起頭
+[01:51.68]너의 머리 위에 꽃 핀 별들을
+你頭頂綻放的繁星
+[01:58.72]바라볼 수 있지 않을까
+能否看見那些星光呢
+[02:01.32]기적은 소리 없이 우릴 찾아오니까
+因為奇蹟總會悄無聲息地找上我們 
+[02:04.04]아직 너의 눈엔 그 모습이 보이지 않아도
+即使此刻你還看不見它的模樣
+[02:09.42]나는 느낄 수 있어 아름답게 피어날
+我卻已能感受到，將綻放得如此美麗 
+[02:15.20]너의 내일 속 환하게 미소 짓는 너를
+在未來的日子裡，看見你綻放燦爛的笑容
+[02:19.97]멀어 보인 꿈들은
+那些看似遙不可及的夢想
+[02:22.76]한 뼘 남은 거리만큼
+其實只剩一步之遙
+[02:25.56]가까워졌단 걸 넌 아직은 몰랐겠지만
+或許你還不知道，自己已離它如此接近
+[02:31.34]하나둘씩 쌓인 너의 시간은
+一點一滴累積的歲月
+[02:35.31]원하는 그곳에 데려갈 거야
+終將帶你抵達心之所向
+[02:38.63](You will fly shining like a star)
+（你將如星辰般閃耀飛翔）
+[02:41.01]짙은 어둠 속을 항해하는 너의 바다에
+在幽深黑暗中，航行於你的海上
+[02:46.19]내가 잠시나마 등대가 돼 널 비춰준다면
+若我能暫時化作燈塔，照亮你
+[02:51.78]그 순간만큼은 너도 다시 고개를 들고
+至少在那一刻，你也能再次抬起頭
+[02:57.15]너의 머리 위에 꽃 핀 별들을
+你頭頂綻放的繁星
+[03:00.94]바라볼 수 있지 않을까
+能否看見那些星光呢
+[03:11.90]비가 내리고 나면
+雨過天晴後
+[03:16.00]끝엔 널 위해 피어난
+盡頭便有為你綻放的
+[03:21.91]무지개가 너를 기다리고 있어
+一道彩虹，正等著你
+[03:24.71]짙은 어둠 속을 항해하는 너의 바다에
+在幽深黑暗中，航行於你的海上
+[03:30.09]내가 잠시나마 등대가 돼 널 비춰준다면
+若我能暫時化作燈塔，照亮你
+[03:35.41]그 순간만큼은 너도 다시 고개를 들고
+至少在那一刻，你也能再次抬起頭
+[03:40.78]너의 머리 위에 꽃 핀 별들을
+你頭頂綻放的繁星
+[03:44.58]바라볼 수 있지 않을까
+能否看見那些星光呢`;
+
     const BE_BE_YOUR_LOVE_LRC_TEXT = `[00:10.61]If I could take you away
 如果我能帶你遠走高飛
 [00:17.24]Pretend I was queen
@@ -1874,9 +1957,9 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgScale: 1.25,
             imgOffsetX: 0.0,
             imgOffsetY: 0.1,
-            duration: 215,
+            duration: 235,
             volume: 0.75,
-            lyrics: []
+            lyrics: parseLrc(VOYAGE_LRC_TEXT)
           }
         ]
       },
@@ -2001,12 +2084,12 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
     ];
 
-    // 更新版本號至 v40，強制套用最新歌詞、音量與現代圖標
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v40')) || TWO_PLAYLISTS_DATA;
+    // 更新版本號至 v42，確保 Voyage 最新歌詞與系統設定全面生效
+    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v42')) || TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v40', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v42', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2608,7 +2691,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     function renderLyricsList() {
       const scroller = document.getElementById('lyrics-scroller');
       scroller.innerHTML = '';
-      scroller.scrollTop = 0; // 強制將歌詞捲軸歸零到頂端第一行
+      scroller.scrollTop = 0;
 
       const song = store[plIdx]?.songs[trackIdx];
 
