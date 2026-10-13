@@ -94,6 +94,7 @@
       color: #ffffff;
     }
 
+    /* 右上角白色五角星按鈕 */
     .admin-star-btn {
       background: none;
       border: none;
@@ -416,6 +417,7 @@
       letter-spacing: 1px;
     }
 
+    /* 現代簡約線條選單樣式 */
     .menu-link-item {
       display: flex;
       align-items: center;
@@ -435,10 +437,50 @@
       border-color: #4b4e5d;
       transform: translateX(2px);
     }
-    .menu-link-item span.desc {
-      font-size: 0.72rem;
+    .menu-left-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .menu-icon-svg {
+      width: 18px;
+      height: 18px;
+      stroke: #9ca3af;
+      stroke-width: 1.75;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .menu-arrow-svg {
+      width: 14px;
+      height: 14px;
+      stroke: #6b7280;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* 說明欄位樣式 */
+    .menu-info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      background: #121318;
+      border: 1px solid #242632;
+      border-radius: 8px;
       color: #9ca3af;
+      font-size: 0.74rem;
+      line-height: 1.45;
+      margin-bottom: 8px;
       font-family: 'Chocolate Classical Sans', sans-serif;
+    }
+    .menu-info-icon {
+      width: 15px;
+      height: 15px;
+      stroke: #6b7280;
+      stroke-width: 1.8;
+      fill: none;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .field-row {
@@ -594,38 +636,79 @@
     </div>
   </footer>
 
+  <!-- 右上角導覽選單 (現代線條圖標、重整功能與說明欄位) -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
       <div style="display:flex; flex-direction:column; gap:4px; margin-top:14px;">
-        <a class="menu-link-item" href="https://u11150003-arch.github.io/2027-winter-bday-desktop/" target="_blank" rel="noopener">
-          <div>
-            <div>💻 WINTER Desktop</div>
-            <span class="desc">回到桌面</span>
+        
+        <!-- 重新整理按鍵 -->
+        <div class="menu-link-item" id="menu-btn-reset">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <div style="font-weight:600;">Reset Playlist 重新整理</div>
           </div>
-          <span>➔</span>
-        </a>
-        <a class="menu-link-item" href="https://u11150003-arch.github.io/winter-cd-player/" target="_blank" rel="noopener">
-          <div>
-            <div>💿 Retro CD Player</div>
-            <span class="desc">前往復古CD隨身聽</span>
-          </div>
-          <span>➔</span>
-        </a>
-        <a class="menu-link-item" href="https://u11150003-arch.github.io/winter-wildwest/" target="_blank" rel="noopener">
-          <div>
-            <div>🐎 WINTER WILD WEST</div>
-            <span class="desc">前往荒野西部視訊</span>
-          </div>
-          <span>➔</span>
-        </a>
-        <div class="menu-link-item" id="menu-btn-admin" style="border-color: #3b82f6; background: rgba(59,130,246,0.08);">
-          <div>
-            <div style="color: #60a5fa;">⚙️ System Access</div>
-            <span class="desc">管理者後台</span>
-          </div>
-          <span style="color: #60a5fa;">🔒</span>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
         </div>
+
+        <!-- 導覽連結 -->
+        <a class="menu-link-item" href="https://u11150003-arch.github.io/2027-winter-bday-desktop/" target="_blank" rel="noopener">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div>
+              <div>WINTER Desktop</div>
+              <span class="desc">回到桌面</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a class="menu-link-item" href="https://u11150003-arch.github.io/winter-cd-player/" target="_blank" rel="noopener">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/></svg>
+            <div>
+              <div>Retro CD Player</div>
+              <span class="desc">前往復古CD隨身聽</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <a class="menu-link-item" href="https://u11150003-arch.github.io/winter-wildwest/" target="_blank" rel="noopener">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div>
+              <div>WINTER WILD WEST</div>
+              <span class="desc">前往荒野西部視訊</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <!-- 管理者入口 -->
+        <div class="menu-link-item" id="menu-btn-admin">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <div>
+              <div>System Access</div>
+              <span class="desc">管理者設定</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+
+        <!-- 說明提示欄位 1 -->
+        <div class="menu-info-box" style="margin-top:6px;">
+          <svg class="menu-info-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>若歌曲或圖示無法順利載入，點擊上方「Reset Playlist 重新整理」。</div>
+        </div>
+
+        <!-- 說明提示欄位 2 -->
+        <div class="menu-info-box">
+          <svg class="menu-info-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <div>手機點擊「分享」&gt;「加入主畫面」，即可享最佳聆聽體驗。</div>
+        </div>
+
       </div>
       <div style="text-align:right; margin-top:14px;">
         <button class="btn-cancel" id="btn-close-nav">關閉選單</button>
@@ -1114,6 +1197,89 @@
 [03:42.76]Oh-oh, oh-oh, oh-oh, oh-oh
 [03:45.15]Oh-oh, oh-oh, oh-oh
 [03:47.27]Saddle up`;
+
+    const TIME_WALKING_LRC_TEXT = `[00:00.54]아직도 너의 소리를 듣고
+至今仍能聽見你的聲音
+[00:06.58]아직도 너의 손길을 느껴
+至今仍能感受到你的觸碰
+[00:12.43]오늘도 난 너의 흔적 안에 살았죠
+今天的我，依然活在你留下的痕跡
+[00:24.33]아직도 너의 모습이 보여
+至今仍能看見你的身影
+[00:30.72]아직도 너의 온기를 느껴
+仍能感受到你的溫度
+[00:36.56]오늘도 난 너의 시간 안에 살았죠
+今天的我，依然活在有你的時光
+[00:49.26]길을 지나는 어떤 낯선 이의 모습 속에도
+即使是街上陌生人的身影裡
+[00:55.05]바람을 타고 쓸쓸히 춤추는 저 낙엽 위에도
+隨風孤寂起舞的落葉之上
+[01:01.14]뺨을 스치는 어느 저녁에 그 공기 속에도
+拂面而過的傍晚空氣中
+[01:07.26]내가 보고 듣고 느끼는 모든 것에 니가 있어 그래
+我所看見、聽見、感受到的一切都有你
+[01:14.69]어떤가요 그댄 어떤가요 그댄
+你過得如何？如今的你，還好嗎？
+[01:23.46]당신도 나와 같나요 어떤가요 그댄
+你是否也和我一樣？如今的你，過得如何？
+[01:30.56]지금도 난 너를 느끼죠
+直到現在，我依然能感受到你
+[01:36.67]이렇게 노랠 부르는 지금 이 순간도
+就連此刻唱著這首歌的瞬間
+[01:44.64]난 그대가 보여
+我彷彿仍能看見你
+[01:54.41]내일도 난 너를 보겠죠
+明天的我，依然會看見你
+[02:00.51]내일도 모든 게 오늘 하루와 같겠죠
+明天的一切，還是會和今天相同 
+[02:19.31]길을 지나는 어떤 낯선 이의 모습 속에도
+即使是街上陌生人的身影裡
+[02:25.42]바람을 타고 쓸쓸히 춤추는 저 낙엽 위에도
+在隨風孤寂起舞的落葉之上
+[02:31.00]뺨을 스치는 어느 저녁에 그 공기 속에도
+在輕拂臉頰的傍晚空氣之中
+[02:37.11]내가 보고 듣고 느끼는 모든 것에 니가 있어 그래
+我所看見、聽見、感受到的一切都有你
+[02:44.82]어떤가요 그댄 어떤가요 그댄
+你過得如何？如今的你，還好嗎？
+[02:53.59]당신도 나와 같나요 어떤가요 그댄
+你是否也和我一樣？如今的你，過得如何？
+[03:04.30]길가에 덩그러니 놓여진 저 의자 위에도
+就連路邊孤零零擺放的椅子
+[03:10.11]물을 마시려 무심코 집어든 유리잔 안에도
+無意間拿起，準備喝水的玻璃杯中
+[03:16.21]나를 바라보기 위해 마주한 그 거울 속에도
+為了看著自己，目光投向的鏡子裡
+[03:22.05]귓가에 살며시 내려앉은 음악 속에도 니가 있어
+輕輕落在耳畔的音樂裡，也有你的存在
+[03:29.78]어떡하죠 이젠 어떡하죠 이젠
+如今該怎麼辦？我究竟該怎麼辦？
+[03:38.28]그대는 지웠을 텐
+你大概早已將一切抹去
+[03:41.73]어떡하죠 이젠 우린
+如今的我們，該怎麼辦？
+[03:56.82]어떡하죠 이젠 어떡하죠 이젠
+如今該怎麼辦？往後又該如何是好？
+[04:10.89]그리움의 문을 열고 너의 기억이 날 찾아와
+思念之門開啟，關於你的回憶再次找上
+[04:16.74]자꾸 눈시울이 붉어져 어떡하죠 이젠
+眼眶一次次泛紅，如今我該怎麼辦？
+[04:22.84]그리움의 문을 열고 너의 기억이 날 찾아와
+思念之門開啟，關於你的回憶再次找上
+[04:28.96]자꾸만 가슴이 미어져 어떡하죠 이젠
+心口一次次揪痛，如今我該怎麼辦？
+[04:34.79]그리움의 문을 열고 너의 기억이 날 찾아와
+思念之門開啟，關於你的回憶再次找上
+[04:40.90]자꾸 눈시울이 붉어져 어떡하죠 이젠
+眼眶忍不住泛紅，如今我該怎麼辦？
+[04:47.01]그리움의 문을 열고 너의 기억이 날 찾아와
+思念之門開啟，關於你的回憶再次找上
+[04:52.87]자꾸만 가슴이 미어져 
+心口痛得幾乎碎裂
+[05:02.64]어떡하죠 이젠
+如今我該怎麼辦？
+[05:08.75]어떡하죠 이젠
+我究竟該怎麼辦？`;
 
     const BE_BE_YOUR_LOVE_LRC_TEXT = `[00:10.61]If I could take you away
 如果我能帶你遠走高飛
@@ -1694,9 +1860,9 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgScale: 1.0,
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
-            duration: 208,
+            duration: 323,
             volume: 0.70,
-            lyrics: []
+            lyrics: parseLrc(TIME_WALKING_LRC_TEXT)
           },
           {
             title: "Voyage",
@@ -1730,7 +1896,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 220,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(BE_BE_YOUR_LOVE_LRC_TEXT)
           },
           {
@@ -1744,7 +1910,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 210,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(WHAT_YOU_WONT_DO_LRC_TEXT)
           },
           {
@@ -1758,7 +1924,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 198,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(YUKON_LRC_TEXT)
           },
           {
@@ -1772,7 +1938,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 245,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: []
           },
           {
@@ -1786,7 +1952,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 215,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(ONLY_WANNA_GIVE_IT_LRC_TEXT)
           },
           {
@@ -1800,7 +1966,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 190,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(TWO_ONE_LRC_TEXT)
           },
           {
@@ -1814,7 +1980,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 202,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(IMPERFECT_FOR_YOU_LRC_TEXT)
           },
           {
@@ -1828,19 +1994,19 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 215,
-            volume: 1.40,
+            volume: 1.60,
             lyrics: parseLrc(BLUE_BLUES_LRC_TEXT)
           }
         ]
       }
     ];
 
-    // 快取版本升級至 v36，強制套用第二張歌單 1.40x 音量與歌詞歸頂邏輯
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v36')) || TWO_PLAYLISTS_DATA;
+    // 更新版本號至 v40，強制套用最新歌詞、音量與現代圖標
+    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v40')) || TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v36', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v40', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2300,8 +2466,8 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
       totalDuration = song.duration || 211;
       const ytId = extractYoutubeId(song.source);
-      // 第二歌單預設 1.40x 音量，第一歌單維持 0.75x
-      const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.40 : 0.75);
+      // 第二歌單預設 1.60x 音量，第一歌單維持 0.75x
+      const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.60 : 0.75);
 
       if (ytId) {
         playMode = 'yt';
@@ -2571,6 +2737,11 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       navModal.style.display = 'none';
     };
 
+    // 重新整理回到預設頁面
+    document.getElementById('menu-btn-reset').onclick = () => {
+      window.location.reload();
+    };
+
     document.getElementById('menu-btn-admin').onclick = () => {
       navModal.style.display = 'none';
       openAuthModal();
@@ -2753,7 +2924,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
         p.songs.forEach((s, sI) => {
           const isFirstSong = sI === 0;
           const isLastSong = sI === p.songs.length - 1;
-          const volDisplay = typeof s.volume === 'number' ? s.volume : (pI === 1 ? 1.40 : 0.75);
+          const volDisplay = typeof s.volume === 'number' ? s.volume : (pI === 1 ? 1.60 : 0.75);
 
           const sRow = document.createElement('div');
           sRow.className = 'song-item-row';
@@ -2832,7 +3003,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       document.getElementById('form-song-artist').value = s.artist || 'WINTER';
       document.getElementById('form-song-source').value = s.source;
 
-      const currentVol = (typeof s.volume === 'number') ? s.volume : (pI === 1 ? 1.40 : 0.75);
+      const currentVol = (typeof s.volume === 'number') ? s.volume : (pI === 1 ? 1.60 : 0.75);
       document.getElementById('form-song-vol').value = currentVol;
       document.getElementById('form-vol-lbl').textContent = `${currentVol.toFixed(2)}x`;
 
