@@ -10,9 +10,6 @@
 
   <title>WINTER PLAYLIST</title>
 
-  <!-- PWA Manifest (防止 iOS 控制中心跳轉至其他網頁) -->
-  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22WINTER%20PLAYLIST%22%2C%22short_name%22%3A%22WINTER%20PLAYLIST%22%2C%22start_url%22%3A%22https%3A%2F%2Fu11150003-arch.github.io%2FWINTER-PLAYLIST%2F%22%2C%22scope%22%3A%22https%3A%2F%2Fu11150003-arch.github.io%2FWINTER-PLAYLIST%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23131418%22%2C%22theme_color%22%3A%22%23131418%22%7D">
-
   <!-- iOS 主畫面圖示 (app_cover.jpg) -->
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
   <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
@@ -20,7 +17,7 @@
   <link rel="apple-touch-icon" sizes="167x167" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
   <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
 
-  <!-- Open Graph 標籤 (WINTER_PLAYLIST_cover.jpg) -->
+  <!-- Open Graph 標籤 -->
   <meta property="og:site_name" content="WINTER PLAYLIST">
   <meta property="og:title" content="WINTER PLAYLIST">
   <meta property="og:description" content="Playlist for WINTER">
@@ -653,7 +650,6 @@
     </div>
   </footer>
 
-  <!-- 右上角導覽選單 (包含重整、外連、管理者與 Threads 聯繫欄位) -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
@@ -721,7 +717,6 @@
           <div>手機點擊「分享」&gt;「加入主畫面」，即可享最佳聆聽體驗。</div>
         </div>
 
-        <!-- 說明欄位最下方：點擊跳轉 Threads -->
         <div class="menu-info-box">
           <svg class="menu-info-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <div>若歌詞有誤或操作不順，請聯繫 <a class="threads-link" href="https://www.threads.com/@kelly_lee_805" target="_blank" rel="noopener">@kelly_lee_805</a></div>
@@ -811,7 +806,7 @@
               <span>音量增益調整 (Volume Gain)</span>
               <span id="form-vol-lbl">1.00x</span>
             </label>
-            <input type="range" id="form-song-vol" min="0.3" max="2.2" step="0.05" value="1.0" style="width:100%; margin-top:4px;">
+            <input type="range" id="form-song-vol" min="0.3" max="1.0" step="0.05" value="1.0" style="width:100%; margin-top:4px;">
           </div>
 
           <div class="field-row">
@@ -898,7 +893,6 @@
   <script type="module">
     import * as THREE from 'three';
 
-    // 全域安全防護：阻止任何意外重導向
     window.addEventListener('click', (e) => {
       const targetA = e.target.closest('a');
       if (targetA && targetA.href) {
@@ -2114,12 +2108,18 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
     ];
 
-    // 更新版本號至 v52，強制套用全域點擊防護與 Threads 導覽欄位
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v52')) || TWO_PLAYLISTS_DATA;
+    // 本地快取防呆機制：確保讀取有效陣列，若無效則強制 fallback 回傳 TWO_PLAYLISTS_DATA
+    let rawLocal = null;
+    try {
+      rawLocal = JSON.parse(localStorage.getItem('winter_playlist_store_v60'));
+    } catch(e) {
+      rawLocal = null;
+    }
+    let store = (Array.isArray(rawLocal) && rawLocal.length > 0) ? rawLocal : TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v52', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v60', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2127,7 +2127,6 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     let trackIdx = 0;
     let isPlaying = false;
     let isDraggingSeek = false;
-    let playMode = 'file';
     let currentSec = 0;
     let totalDuration = 230;
     let hasPlayedFirstTrack = false;
@@ -2163,8 +2162,26 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
     }
 
+    function normalizeImageUrl(url) {
+      if (!url) return '';
+      url = url.trim();
+      const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
+                         url.match(/id=([a-zA-Z0-9_-]+)/) || 
+                         url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (driveMatch) return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
+      if (url.includes('dropbox.com')) return url.replace('www.dropbox.com', 'dl.dropboxusercontent.com').replace('?dl=0', '');
+      if (url.includes('imgur.com') && !url.includes('i.imgur.com')) {
+        const id = url.split('/').pop().split('.')[0];
+        return `https://i.imgur.com/${id}.jpg`;
+      }
+      if (url.includes('github.com') && url.includes('/blob/')) {
+        return url.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
+      }
+      return url;
+    }
+
     /* -------------------------------------------------------------
-     * 3. Three.js 3D (旋轉展示模式完全統一，嚴格 360 度避免半圈回彈)
+     * 3. Three.js 3D
      * ------------------------------------------------------------*/
     const container = document.getElementById('threejs-box');
     const scene = new THREE.Scene();
@@ -2274,12 +2291,12 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     const coverGeo = new THREE.BoxGeometry(2.0, 2.0, 0.05);
     const coverSideMat = [
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 右側
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 左側
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 頂部
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 底部
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }), // 正面
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })  // 背面
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })
     ];
     const coverMesh = new THREE.Mesh(coverGeo, coverSideMat);
     coverMesh.position.set(-0.55, 0, 0);
@@ -2633,7 +2650,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     window.addEventListener('touchend', handleSeekEnd);
 
     /* -------------------------------------------------------------
-     * 6. 歌詞渲染 (切歌時捲軸即刻歸零首行)
+     * 6. 歌詞渲染
      * ------------------------------------------------------------*/
     function syncLyrics(sec) {
       const song = store[plIdx]?.songs[trackIdx];
@@ -2702,8 +2719,9 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     }
 
     function renderUI() {
+      if (!store || !store[plIdx]) return;
       const curPl = store[plIdx];
-      const song = curPl?.songs[trackIdx];
+      const song = curPl.songs[trackIdx];
       if (!song) return;
 
       document.getElementById('disp-title').textContent = song.title;
@@ -2797,6 +2815,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     };
 
     document.getElementById('menu-btn-reset').onclick = () => {
+      localStorage.removeItem('winter_playlist_store_v60');
       window.location.reload();
     };
 
@@ -3191,7 +3210,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     renderUI();
     
     // 預先掛載第一首音訊
-    if (store[plIdx] && store[plIdx].songs[trackIdx]) {
+    if (store && store[plIdx] && store[plIdx].songs && store[plIdx].songs[trackIdx]) {
       const firstSong = store[plIdx].songs[trackIdx];
       let firstSrc = firstSong.source.replace(/^\.\//, '');
       if (!firstSrc.startsWith('http')) {
