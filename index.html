@@ -5,28 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WINTER PLAYLIST">
   <meta name="theme-color" content="#131418">
 
   <title>WINTER PLAYLIST</title>
 
-  <!-- Open Graph 標籤 -->
+  <!-- PWA Manifest (防止 iOS 控制中心跳轉至其他網頁) -->
+  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22WINTER%20PLAYLIST%22%2C%22short_name%22%3A%22WINTER%20PLAYLIST%22%2C%22start_url%22%3A%22https%3A%2F%2Fu11150003-arch.github.io%2FWINTER-PLAYLIST%2F%22%2C%22scope%22%3A%22https%3A%2F%2Fu11150003-arch.github.io%2FWINTER-PLAYLIST%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23131418%22%2C%22theme_color%22%3A%22%23131418%22%7D">
+
+  <!-- iOS 主畫面圖示 (app_cover.jpg) -->
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
+  <link rel="apple-touch-icon" sizes="167x167" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
+  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/app_cover.jpg">
+
+  <!-- Open Graph 標籤 (WINTER_PLAYLIST_cover.jpg) -->
   <meta property="og:site_name" content="WINTER PLAYLIST">
   <meta property="og:title" content="WINTER PLAYLIST">
   <meta property="og:description" content="Playlist for WINTER">
   <meta name="description" content="Playlist for WINTER">
   <meta property="og:type" content="music.playlist">
   <meta property="og:url" content="https://u11150003-arch.github.io/WINTER-PLAYLIST/">
-  
-  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1c2HM5tdmFqXvLC_3a2xkNgAVpZupleLW">
-  <meta property="og:image:secure_url" content="https://lh3.googleusercontent.com/d/1c2HM5tdmFqXvLC_3a2xkNgAVpZupleLW">
+  <meta property="og:image" content="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/WINTER_PLAYLIST_cover.jpg">
+  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/WINTER_PLAYLIST_cover.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="WINTER PLAYLIST">
   <meta name="twitter:description" content="Playlist for WINTER">
-  <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1c2HM5tdmFqXvLC_3a2xkNgAVpZupleLW">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/u11150003-arch/WINTER-PLAYLIST/main/WINTER_PLAYLIST_cover.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -546,7 +554,6 @@
     .btn-order { background: #27272a; color: #d4d4d8; border: 1px solid #3f3f46; font-size: 0.7rem; padding: 2px 5px; }
     .btn-order:disabled { opacity: 0.3; cursor: not-allowed; }
 
-    /* 徹底停用預覽區域的一切點擊與外部導向行為 */
     .preview-card-box {
       background: #101115;
       border: 1px dashed #3f4252;
@@ -584,9 +591,7 @@
 </head>
 <body>
 
-  <!-- 原生音訊：跨域串流、自動預載以支援鎖屏背景播放 -->
   <audio id="native-audio" playsinline preload="auto" crossorigin="anonymous"></audio>
-  <iframe id="yt-hidden-player" style="position:absolute; top:-9999px; left:-9999px; width:1px; height:1px;" frameborder="0" allow="autoplay; encrypted-media"></iframe>
 
   <header>
     <div class="brand-title" id="logo-trigger">WINTER PLAYLIST</div>
@@ -637,7 +642,7 @@
     </div>
   </footer>
 
-  <!-- 右上角導覽選單 -->
+  <!-- 右上角導覽選單 (包含重新整理、外連、管理者與提示欄位) -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
@@ -703,6 +708,11 @@
         <div class="menu-info-box">
           <svg class="menu-info-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           <div>手機點擊「分享」&gt;「加入主畫面」，即可享最佳聆聽體驗。</div>
+        </div>
+
+        <div class="menu-info-box">
+          <svg class="menu-info-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>若歌詞有誤或操作不順，請聯繫 <strong>@kelly_lee_805</strong></div>
         </div>
 
       </div>
@@ -781,15 +791,15 @@
             <input type="text" id="form-song-artist" placeholder="WINTER" value="WINTER">
           </div>
           <div class="field-row">
-            <label>音訊來源 (本機檔名、GitHub 網址 或 YouTube 連結)</label>
-            <input type="text" id="form-song-source" placeholder="如：lips (online-audio-converter.com).mp3 或 YouTube 網址">
+            <label>音訊來源 (本機檔名或 GitHub 網址)</label>
+            <input type="text" id="form-song-source" placeholder="如：lips (online-audio-converter.com).mp3">
           </div>
           <div class="field-row">
             <label style="display:flex; justify-content:space-between;">
               <span>音量增益調整 (Volume Gain)</span>
               <span id="form-vol-lbl">1.00x</span>
             </label>
-            <input type="range" id="form-song-vol" min="0.3" max="2.2" step="0.05" value="1.0" style="width:100%; margin-top:4px;">
+            <input type="range" id="form-song-vol" min="0.3" max="1.0" step="0.05" value="1.0" style="width:100%; margin-top:4px;">
           </div>
 
           <div class="field-row">
@@ -875,6 +885,17 @@
 
   <script type="module">
     import * as THREE from 'three';
+
+    // 全域安全防護：阻止任何意外重導向
+    window.addEventListener('click', (e) => {
+      const targetA = e.target.closest('a');
+      if (targetA && targetA.href) {
+        if (targetA.href.includes('melon.com') || targetA.href.includes('ticket.melon')) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    }, true);
 
     const CD_PROJECT_BASE = "https://u11150003-arch.github.io/winter-cd-player/";
     
@@ -1871,7 +1892,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 230,
-            volume: 0.75,
+            volume: 0.65, // 電平較大，設為 0.65x
             lyrics: parseLrc(LIPS_LRC_TEXT)
           },
           {
@@ -1885,7 +1906,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 195,
-            volume: 0.70,
+            volume: 0.60,
             lyrics: []
           },
           {
@@ -1899,7 +1920,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 211,
-            volume: 0.70,
+            volume: 0.60,
             lyrics: parseLrc(BLUE_LRC_TEXT)
           },
           {
@@ -1913,7 +1934,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 230,
-            volume: 0.70,
+            volume: 0.60,
             lyrics: parseLrc(SADDLE_LRC_TEXT)
           },
           {
@@ -1927,7 +1948,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 210,
-            volume: 0.70,
+            volume: 0.60,
             lyrics: []
           },
           {
@@ -1941,7 +1962,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 323,
-            volume: 0.70,
+            volume: 0.60,
             lyrics: parseLrc(TIME_WALKING_LRC_TEXT)
           },
           {
@@ -1955,7 +1976,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.1,
             duration: 235,
-            volume: 0.75,
+            volume: 0.65,
             lyrics: parseLrc(VOYAGE_LRC_TEXT)
           }
         ]
@@ -1976,7 +1997,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 220,
-            volume: 1.60,
+            volume: 1.0, // 第二歌單原生滿格 1.0x，達到齊平聽感
             lyrics: parseLrc(BE_BE_YOUR_LOVE_LRC_TEXT)
           },
           {
@@ -1990,7 +2011,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 210,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(WHAT_YOU_WONT_DO_LRC_TEXT)
           },
           {
@@ -2004,7 +2025,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 198,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(YUKON_LRC_TEXT)
           },
           {
@@ -2018,7 +2039,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 245,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: []
           },
           {
@@ -2032,7 +2053,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 215,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(ONLY_WANNA_GIVE_IT_LRC_TEXT)
           },
           {
@@ -2046,7 +2067,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 190,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(TWO_ONE_LRC_TEXT)
           },
           {
@@ -2060,7 +2081,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 202,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(IMPERFECT_FOR_YOU_LRC_TEXT)
           },
           {
@@ -2074,19 +2095,18 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetX: 0.0,
             imgOffsetY: 0.0,
             duration: 215,
-            volume: 1.60,
+            volume: 1.0,
             lyrics: parseLrc(BLUE_BLUES_LRC_TEXT)
           }
         ]
       }
     ];
 
-    // 更新版本號至 v44，保證最新動態歌詞與排版規則完整套用
-    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v44')) || TWO_PLAYLISTS_DATA;
+    let store = JSON.parse(localStorage.getItem('winter_playlist_store_v50')) || TWO_PLAYLISTS_DATA;
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v44', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v50', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2097,11 +2117,9 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     let playMode = 'file';
     let currentSec = 0;
     let totalDuration = 230;
-    let ytTimer = null;
     let hasPlayedFirstTrack = false;
 
     const nativeAudio = document.getElementById('native-audio');
-    const ytIframe = document.getElementById('yt-hidden-player');
 
     function updateMediaSession(song, pl) {
       if ('mediaSession' in navigator) {
@@ -2114,6 +2132,8 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             { src: coverUrl, sizes: '512x512', type: 'image/jpeg' }
           ]
         });
+
+        navigator.mediaSession.playbackState = "playing";
 
         navigator.mediaSession.setActionHandler('play', () => {
           playActiveSong(false);
@@ -2148,16 +2168,8 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       return url;
     }
 
-    function extractYoutubeId(url) {
-      if (!url) return null;
-      if (url.includes("v=")) return url.split("v=")[1].substring(0, 11);
-      if (url.includes("youtu.be/")) return url.split("youtu.be/")[1].substring(0, 11);
-      if (url.length === 11 && !url.includes("/") && !url.includes(".")) return url.trim();
-      return null;
-    }
-
     /* -------------------------------------------------------------
-     * 3. Three.js 3D (旋轉展示模式完全統一，嚴格 360 度避免半圈回彈)
+     * 3. Three.js 3D
      * ------------------------------------------------------------*/
     const container = document.getElementById('threejs-box');
     const scene = new THREE.Scene();
@@ -2267,12 +2279,12 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     const coverGeo = new THREE.BoxGeometry(2.0, 2.0, 0.05);
     const coverSideMat = [
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 右側
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 左側
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 頂部
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 底部
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }), // 正面
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })  // 背面
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })
     ];
     const coverMesh = new THREE.Mesh(coverGeo, coverSideMat);
     coverMesh.position.set(-0.55, 0, 0);
@@ -2512,27 +2524,15 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     }
 
     nativeAudio.addEventListener('timeupdate', () => {
-      if (playMode !== 'file' || isDraggingSeek) return;
+      if (isDraggingSeek) return;
       updateProgressUI(nativeAudio.currentTime, nativeAudio.duration || totalDuration);
     });
     nativeAudio.addEventListener('playing', () => setPlayState(true));
     nativeAudio.addEventListener('pause', () => setPlayState(false));
     nativeAudio.addEventListener('ended', () => {
-      // 確保在背景或鎖屏狀態下持續自動輪播下一首
+      // 熄屏背景播放時無縫播放下一首
       playNext();
     });
-
-    function startYtProgressTimer() {
-      clearInterval(ytTimer);
-      ytTimer = setInterval(() => {
-        if (!isPlaying || playMode !== 'yt' || isDraggingSeek) return;
-        currentSec += 0.25;
-        updateProgressUI(currentSec, totalDuration);
-        if (currentSec >= totalDuration) {
-          playNext();
-        }
-      }, 250);
-    }
 
     function playActiveSong(isNewTrack = false) {
       const curPl = store[plIdx];
@@ -2548,71 +2548,52 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
 
       totalDuration = song.duration || 211;
-      const ytId = extractYoutubeId(song.source);
-      // 第二歌單 1.60x 增益，第一歌單維持 0.75x
-      const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.60 : 0.75);
+      const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.0 : 0.65);
 
-      if (ytId) {
-        playMode = 'yt';
+      let directSrc = song.source.replace(/^\.\//, '');
+      if (!directSrc.startsWith('http')) {
+        directSrc = CD_PROJECT_BASE + encodeURIComponent(directSrc).replace(/%2F/g, '/');
+      } else if (directSrc.includes('github.com') && directSrc.includes('/blob/')) {
+        directSrc = directSrc.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
+      }
+
+      nativeAudio.volume = Math.min(1.0, Math.max(0, targetVolume));
+
+      if (isNewTrack || nativeAudio.src !== directSrc) {
         nativeAudio.pause();
-        nativeAudio.removeAttribute('src');
+        currentSec = 0;
+        updateProgressUI(0, totalDuration);
 
-        const startSec = Math.floor(currentSec || 0);
-        ytIframe.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&start=${startSec}&playsinline=1&controls=0&enablejsapi=1`;
-        setPlayState(true);
-        startYtProgressTimer();
-      } else {
-        playMode = 'file';
-        clearInterval(ytTimer);
-        ytIframe.src = '';
+        nativeAudio.src = directSrc;
+        nativeAudio.currentTime = 0;
 
-        let directSrc = song.source.replace(/^\.\//, '');
-        if (!directSrc.startsWith('http')) {
-          directSrc = CD_PROJECT_BASE + encodeURIComponent(directSrc).replace(/%2F/g, '/');
-        } else if (directSrc.includes('github.com') && directSrc.includes('/blob/')) {
-          directSrc = directSrc.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
+        const p = nativeAudio.play();
+        if (p !== undefined) {
+          p.then(() => setPlayState(true)).catch(err => {
+            console.log("Waiting for user gesture:", err);
+            setPlayState(false);
+          });
         }
-
-        nativeAudio.volume = Math.min(1.0, Math.max(0, targetVolume));
-
-        if (isNewTrack || nativeAudio.src !== directSrc) {
-          nativeAudio.pause();
-          currentSec = 0;
-          updateProgressUI(0, totalDuration);
-
-          nativeAudio.src = directSrc;
-          nativeAudio.currentTime = 0;
-
-          const p = nativeAudio.play();
-          if (p !== undefined) {
-            p.then(() => setPlayState(true)).catch(err => {
-              console.log("Waiting for user gesture:", err);
-              setPlayState(false);
-            });
-          }
-        } else {
-          if (currentSec > 0 && Math.abs(nativeAudio.currentTime - currentSec) > 1) {
-            nativeAudio.currentTime = currentSec;
-          }
-          const p = nativeAudio.play();
-          if (p !== undefined) {
-            p.then(() => setPlayState(true)).catch(err => {
-              console.log("Waiting for gesture:", err);
-              setPlayState(false);
-            });
-          }
+      } else {
+        if (currentSec > 0 && Math.abs(nativeAudio.currentTime - currentSec) > 1) {
+          nativeAudio.currentTime = currentSec;
+        }
+        const p = nativeAudio.play();
+        if (p !== undefined) {
+          p.then(() => setPlayState(true)).catch(err => {
+            console.log("Waiting for gesture:", err);
+            setPlayState(false);
+          });
         }
       }
     }
 
     function pauseActiveSong() {
       setPlayState(false);
-      if (playMode === 'file') {
-        currentSec = nativeAudio.currentTime;
-        nativeAudio.pause();
-      } else {
-        clearInterval(ytTimer);
-        ytIframe.src = '';
+      currentSec = nativeAudio.currentTime;
+      nativeAudio.pause();
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.playbackState = "paused";
       }
     }
 
@@ -2645,11 +2626,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       const frac = getSeekFraction(e.changedTouches ? e.changedTouches[0] : e);
       currentSec = frac * totalDuration;
 
-      if (playMode === 'file') {
-        nativeAudio.currentTime = currentSec;
-      } else {
-        if (isPlaying) playActiveSong(false);
-      }
+      nativeAudio.currentTime = currentSec;
       updateProgressUI(currentSec, totalDuration);
     }
 
@@ -2662,7 +2639,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     window.addEventListener('touchend', handleSeekEnd);
 
     /* -------------------------------------------------------------
-     * 6. 歌詞渲染 (切換歌曲強制歸零捲軸，確保首行就定位)
+     * 6. 歌詞渲染 (切歌時捲軸即刻歸零首行)
      * ------------------------------------------------------------*/
     function syncLyrics(sec) {
       const song = store[plIdx]?.songs[trackIdx];
@@ -2692,7 +2669,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       const scroller = document.getElementById('lyrics-scroller');
       scroller.innerHTML = '';
       
-      // 切歌時立即瞬移回頂部第一行，不套用 smooth 動畫
+      // 切歌時立即無動畫回頂部第一行
       scroller.style.scrollBehavior = 'auto';
       scroller.scrollTop = 0;
       setTimeout(() => {
@@ -2724,8 +2701,8 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
         div.onclick = () => {
           currentSec = l.time;
-          if (playMode === 'file') nativeAudio.currentTime = currentSec;
-          else playActiveSong(false);
+          nativeAudio.currentTime = currentSec;
+          playActiveSong(false);
         };
         scroller.appendChild(div);
       });
@@ -3012,7 +2989,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
         p.songs.forEach((s, sI) => {
           const isFirstSong = sI === 0;
           const isLastSong = sI === p.songs.length - 1;
-          const volDisplay = typeof s.volume === 'number' ? s.volume : (pI === 1 ? 1.60 : 0.75);
+          const volDisplay = typeof s.volume === 'number' ? s.volume : (pI === 1 ? 1.0 : 0.65);
 
           const sRow = document.createElement('div');
           sRow.className = 'song-item-row';
@@ -3091,7 +3068,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       document.getElementById('form-song-artist').value = s.artist || 'WINTER';
       document.getElementById('form-song-source').value = s.source;
 
-      const currentVol = (typeof s.volume === 'number') ? s.volume : (pI === 1 ? 1.60 : 0.75);
+      const currentVol = (typeof s.volume === 'number') ? s.volume : (pI === 1 ? 1.0 : 0.65);
       document.getElementById('form-song-vol').value = currentVol;
       document.getElementById('form-vol-lbl').textContent = `${currentVol.toFixed(2)}x`;
 
