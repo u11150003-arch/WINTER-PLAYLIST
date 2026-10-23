@@ -650,6 +650,7 @@
     </div>
   </footer>
 
+  <!-- 右上角導覽選單 (包含重整、外連、管理者與 Threads 聯繫欄位) -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
@@ -1018,6 +1019,73 @@
 [03:40.15]아주 천천히 말해줄게
 我會慢慢地告訴你`;
 
+    const SPARK_LRC_TEXT = `[00:18.15]Woo-Ha
+[00:25.13]Whoo
+[00:32.32]Light up your heart
+點亮你的心
+[00:34.65]So I can see you shining
+讓我看見你閃耀
+[00:39.81]Say what you see
+說出你眼中的景色
+[00:42.22]Try feeling me wherever you go
+無論走到哪裡，都試著感受我的存在
+[00:47.99]Connect to my heart
+與我的心相連
+[00:51.17]I want you to learn
+我想讓你慢慢懂得
+[00:53.17]Every little thing about our love
+關於我們愛情的一點一滴
+[00:56.70]Illuminate the night
+照亮這片夜色
+[00:58.62]Breathe into my soul (Hoo)
+為我的靈魂注入氣息（Hoo）
+[01:03.99]One little Spark is all I need
+我所需要的，只是一點火花
+[01:07.77]A fire burning for something new
+為嶄新的一切燃起的火焰
+[01:11.50]One little Spark and you set me free
+只要一點火花，你便能讓我自由
+[01:14.71]Now one becomes two
+此刻，一化為二
+[01:29.85]Only takes one little Spark
+只需要一點火花
+[01:32.44]And we’re igniting
+我們便就此點燃
+[01:44.10]Come light it up
+來吧，讓一切閃耀
+[01:48.64]Now when the sun goes down
+如今，即使夕陽西沉
+[01:50.62]I’m never in the dark
+我也不再身處黑暗
+[01:52.62]Like a candle, you’re burning bright
+你如燭火般明亮地燃燒
+[01:56.21]You talk like honey
+你的話語甜如蜜糖
+[01:57.76]How you so sweetly reassure
+你溫柔甜蜜的話語，總能讓我安心
+[02:04.94]One little Spark is all I need (All I need)
+我所需要的，只是一點火花（我所需要的）
+[02:08.72]A fire burning for something new (Ooh)
+為嶄新的一切燃起的火焰（Ooh）
+[02:12.50]One little Spark and you set me free
+只要一點火花，你便能讓我自由
+[02:15.48]Now one becomes two
+此刻，一化為二
+[02:30.83]Only takes one little Spark
+只需要一點火花
+[02:33.43]And we’re igniting
+我們便就此點燃
+[02:45.25]Come light it up
+來吧，讓一切閃耀
+[02:50.00]넌 이끌린 대로 더 가까이 와
+順著心中的牽引，再靠近我一些
+[02:55.78]날 느낄 수 있게
+讓我感受到你的存在
+[02:57.94]Feel the Spark with me
+與我一同感受這道火花
+[03:00.26]It will never be dark
+從此不再有黑暗`;
+
     const BLUE_LRC_TEXT = `[00:12.96]Days go by and I’m not feeling better
 日子一天天過去，我卻始終沒有好轉
 [00:18.55]Coffee’s always bitter if it even has a taste
@@ -1219,6 +1287,128 @@
 [03:42.76]Oh-oh, oh-oh, oh-oh, oh-oh
 [03:45.15]Oh-oh, oh-oh, oh-oh
 [03:47.27]Saddle up`;
+
+    const SPEED_OF_SUMMER_LRC_TEXT = `[00:11.45]Ah-ah (hoo)
+[00:21.63]바람이 창을 두드리면
+當微風輕敲車窗
+[00:24.78]라디오 볼륨을 조금 더 올려
+把收音機音量調高一些
+[00:28.58]낮에 남겨둔 걱정들은
+白日裡未解的煩憂
+[00:31.34]도로 위로 흘려보내
+讓它們隨著道路遠去
+[00:35.52]네가 웃던 장면들이
+你微笑的畫面
+[00:39.10]가로등처럼 지나가고
+如路燈般掠過
+[00:42.49]오늘 밤은 어쩐지
+今夜不知為何
+[00:44.83]멀리 가도 될 것 같아
+似乎能走得更遠
+[00:49.58]지도도 없이
+不需要地圖
+[00:51.78]마음 가는 쪽으로
+朝著心之所向
+[00:55.95]이 밤이 우리를
+讓這個夜晚
+[00:58.55]어디든 데려가
+帶著我們去往任何地方
+[01:02.68]달빛 위를 달려가
+奔馳在月光之上
+[01:06.50]여름의 속도로
+乘著夏日的速度
+[01:10.29]지금 이 순간이
+此刻的一瞬間
+[01:13.88]우릴 반짝이게 해
+讓我們閃耀吧
+[01:17.07]노래처럼 흘러가
+如歌聲般流淌
+[01:20.47]창밖의 불빛도
+窗外的燈火
+[01:24.25]이 밤이 끝나도
+即使今夜落幕
+[01:27.83]기억은 계속될 거야
+記憶仍會延續
+[01:34.60]속도를 조금 늦추면
+如果稍稍放慢速度
+[01:37.10]파도 같은 음악 사이
+在如波浪般的樂聲之間
+[01:41.28]말하지 않아도
+即使不必言語
+[01:43.88]같은 생각을 하는 밤
+有着同樣想法的夜晚
+[01:48.66]창문 사이로 스며든
+透過窗戶滲入的
+[01:51.85]따뜻한 공기처럼
+如同溫暖的空氣般
+[01:55.44]어디쯤 와 있는지
+即使不知道身在何處
+[01:57.96]몰라도 괜찮아
+也沒有關係
+[02:02.61]별들이 전부
+所有星辰
+[02:04.73]길 위에 떨어져
+都灑落在道路上
+[02:09.43]우리의 밤을
+將屬於我們的夜晚
+[02:11.62]밝히는 것 같아
+照得明亮
+[02:15.72]달빛 위를 달려가
+奔馳在月光之上
+[02:19.51]여름의 속도로
+乘著夏日的速度
+[02:23.29]지금 이 순간이
+此刻的這一瞬間
+[02:26.88]우릴 반짝이게 해
+讓我們閃耀吧
+[02:30.09]노래처럼 흘러가
+如歌聲般流淌
+[02:33.47]창밖의 불빛도
+窗外的燈火
+[02:37.26]이 밤이 끝나도
+即使今夜落幕
+[02:40.84]기억은 계속될 거야
+這份記憶仍會延續
+[02:45.64]멈추지 마
+別停下腳步
+[02:47.64]이 노래가 끝나도
+即使這首歌結束
+[02:51.42]다시 또
+也會再次
+[02:53.01]새로운 길이 시작돼
+踏上嶄新的旅程
+[02:58.19]우리가 웃던
+那些我們曾一同歡笑的
+[03:01.77]이 여름의 장면들
+夏日片段
+[03:05.10]시간이 지나도
+即使時光流逝
+[03:08.19]빛나게 될 거야
+依然會閃耀如初
+[03:11.50]달빛 위를 달려가
+奔馳在月光之上
+[03:14.99]여름의 속도로
+乘著夏日的速度
+[03:19.00]지금 이 순간이
+此刻的一瞬間
+[03:22.39]우릴 자유롭게 해
+讓我們自由吧
+[03:25.57]손을 들어 외쳐봐
+舉起雙手，盡情呼喊
+[03:28.96]이 밤의 이름을
+喊出這個夜晚的名字
+[03:32.76]여름은 지금
+因為此刻的夏天
+[03:36.35]우리 안에 있으니까
+正存在於我們心中
+[03:43.32]끝나지 마
+請不要結束
+[03:46.77]이 노래처럼
+就像這首歌一樣
+[03:50.30]오늘의 우리가
+此刻的我們
+[03:52.70]내일이 될 때까지
+直到明日那刻`;
 
     const TIME_WALKING_LRC_TEXT = `[00:00.54]아직도 너의 소리를 듣고
 至今仍能聽見你的聲音
@@ -1514,6 +1704,112 @@
 [02:24.54]Make me do for love what I would not do
 讓我為了愛，做出從前不曾做過的事`;
 
+    const YUKON_LRC_TEXT = `[00:00.45]In the city, uh, remember you used to drive a Yukon
+在這座城市裡，還記得你從前總開著 Yukon(GMC豪華SUV車款)嗎？
+[00:05.15]I'd pick up whenever you called
+每當你來電，我總會接起
+[00:07.76]In the parkin' lot in Tucson, like, "Uh, are you with me?"
+在圖森的停車場裡，你彷彿問著：「你會陪在我身邊嗎？」
+[00:12.81]In the Phantom with the roof gone, I pull up like Jimmy Neutron
+我開著敞篷的 Phantom(勞斯萊斯幻影) 現身，如同 Jimmy Neutron(動畫主角-天才小子吉米)般引人注目
+[00:17.84]I can help you get a move on, like U-Haul, and I know
+我能助你踏上新的旅程，就像 U-Haul(搬家與貨車租賃公司)般替你打點一切，而我明白
+[00:22.83]Uh, you like to go slow, but we could go faster, tell me the password
+你喜歡循序漸進，但我們也能加快腳步，告訴我那句暗號
+[00:30.53]Slide city, slide city, you know what that means, uh
+悄然來去，悄然穿梭，你明白其中的意思
+[00:35.58]I'm coming up on you quickly, mm, I'll bring nice things, uh
+我正迅速向你靠近，也會為你帶來美好的事物
+[00:40.62]Slide city, slide, plenty other men tryna get in the bed
+悄然來去，悄然靠近，還有許多人試圖與你共度一夜
+[00:45.69]So when it gets lost and sick, I know it's gonna make you beg
+所以當一切失控、令人難以承受時，我知道你終究會開口挽留
+[00:50.73]What would I do (What would I do?), if I didn't love you, babe?
+如果我不愛你，我又該如何是好？
+[00:55.78]What would I do if I didn't lock you, babe?
+如果我沒有認定你、與你相守，我又該如何是好？
+[01:00.83]What would I do (What would I do?), if I didn't love you?
+如果我不愛你，我又該如何是好？
+[01:11.98]Just wanna be the one to give you what you want
+我只想成為那個能給你所求之物的人
+[01:17.02]I could put you in the Yves Saint Laurent
+我能讓你身著 YSL
+[01:19.31]Riding around town with your hair down, uh (True)
+讓你披散著長髮，在城裡自在兜風
+[01:22.50]I know you like it when I tell you what you want
+我知道，你喜歡聽我說出那些合你心意的話
+[01:25.34]Give you back what you done and what you want
+你曾為我付出的一切，我都會回報，也會給你所渴望的
+[01:27.71]I can tell your friends if you don't want them, uh, uh
+若你不想讓朋友知道，我也能替你保守秘密
+[01:33.17]Uh, you like to go slow, but we could go faster, tell me the password (Uh)
+你喜歡循序漸進，但我們也能加快腳步，告訴我那句暗號
+[01:41.29]Slide city, slide city, you know what that means, uh
+悄然來去，悄然穿梭，你明白其中的意思
+[01:46.07]I'm coming up on you quickly, mm, I'll bring nice things, uh (Yeah, baby, I'll bring nice things)
+我正迅速向你靠近，也會為你帶來美好的事物（是的，親愛的，我會帶來美好的一切）
+[01:51.52]Slide city, slide, plenty other men tryna get in the bed
+悄然來去，悄然靠近，還有許多人試圖與你共度一夜
+[01:56.19]So when it gets lost and sick, I know it's gonna make you beg
+所以當一切失控、令人難以承受時，我知道你終究會開口挽留
+[02:01.66]What would I do, uh, if I didn't love you, babe?
+如果我不愛你，我又該如何是好？
+[02:06.31]What would I do if I didn't lock you, babe?
+如果我沒有認定你、與你相守，我又該如何是好？
+[02:11.76]What would I do (What would I do?), if I didn't love you? (What would I, what would I do?)
+如果我不愛你，我又該如何是好？`;
+
+    const GEOTJITMAL_LRC_TEXT = `[00:12.20]다시 돌아올 거라고 했잖아
+不是說會回來嗎
+[00:17.71]잠깐이면 될 거라고 했잖아
+不是只要等一會兒嗎
+[00:23.29]여기 서 있으라 말했었잖아
+不是讓我在這裡等待嗎
+[00:27.67]거짓말 거짓말 거짓말
+謊言，謊言，全都是謊言
+[00:34.64]물끄러미 선 채 해가 저물고
+茫然地站到日暮
+[00:40.22]웅크리고 앉아 밤이 깊어도
+蜷縮坐著，直到夜色深沉
+[00:45.81]결국 너는 나타나지 않잖아
+結果，你終究沒有出現
+[00:54.98]우우 그대만을 하염없이 기다렸는데
+茫然地等待著你
+[01:06.27]우우 그대 말을 철석같이 믿었었는데
+深信不疑地相信你的話
+[01:17.43]우우우우우 찬 바람에 길은 얼어붙고
+道路在寒風中逐漸冰封
+[01:28.58]우우우우우 나도 새하얗게 얼어버렸네
+我也凍得發白
+[01:44.30]내겐 잘못이 없다고 했잖아
+不是說我沒有做錯嗎
+[01:50.08]나는 좋은 사람이라 했잖아
+不是說我是個好人嗎
+[01:55.25]상처까지 안아준다 했잖아
+你不是說過，連我的傷口也會一併擁抱嗎
+[02:06.77]다시 나는 홀로 남겨진 거고
+我又再次獨自被留下
+[02:12.19]모든 추억들은 버리는 거고
+拋棄所有的回憶
+[02:17.85]역시 나는 자격이 없는 거지
+果然我還是沒有資格吧
+[02:27.17]우우 그대만을 하염없이 기다렸는데
+茫然地等待著你
+[02:38.32]우우 그대 말을 철석같이 믿었었는데
+深信不疑地相信你的話
+[02:49.50]우우우우우 찬 바람에 길은 얼어붙고
+道路在寒風中逐漸冰封
+[03:00.67]우우우우우 나도 새하얗게 얼어버렸네
+我也凍得發白
+[03:31.36]우우 
+嗚...
+[03:45.70]우우 철석같이 믿었었는데
+我曾深信不疑地相信你的話
+[03:53.85]우우우우우
+嗚...
+[04:11.16]거짓말 거짓말 거짓말
+謊言，謊言，全都是謊言`;
+
     const ONLY_WANNA_GIVE_IT_LRC_TEXT = `[00:10.10]Thought you were just another Romeo
 原以為你不過是另一個羅密歐
 [00:14.82]The shoe you pass by in the store window
@@ -1568,6 +1864,79 @@
 我真心盼望，你也有著與我相同的心意
 [02:31.82]I like, I like, I like that y'all, I like that y'all
 我喜歡，我真的喜歡這一切，我就是如此著迷`;
+
+    const TWO_ONE_LRC_TEXT = `[00:15.53]I missed your 21st birthday
+我錯過了你二十一歲的生日
+[00:18.12]I've been up at home
+那晚我獨自在家，徹夜未眠
+[00:19.88]Almost tried to call you, don't know if I should
+幾乎忍不住想打給你，卻不知是否該這麼做
+[00:23.52]Hate to picture you half-drunk happy
+不願想像你微醺著，滿心歡喜的模樣
+[00:27.49]Hate to think you went out without me
+也不願去想，你已能獨自赴約，不再有我陪伴
+[00:31.75]I'm sorry if you blame me, if I were you, I would
+若你因此責怪我，我很抱歉；換作是我，想必也會如此
+[00:36.01]Thought you'd see it coming, but you never could
+我以為你早該有所察覺，沒想到你始終毫無預料
+[00:39.62]I still haven't heard from your family
+至今，我仍未收到你家人的消息
+[00:43.61]But you said your mom always loved me
+但你曾說過，你的母親一直都很喜歡我
+[00:49.34]Sometimes I go blurry-eyed
+有時，淚水會模糊我的視線
+[00:53.32]Small talk and you tell me that you're on fire
+我們閒聊幾句，你說自己最近正意氣風發
+[00:57.56]Lights on and it's black and white, I couldn't stay forever
+燈光亮起，世界只剩黑白分明，我終究無法永遠停留
+[01:04.21]I see the look in your eye and I'm biting my tongue
+望見你眼中的神情，我只能將滿腹的話咽回心底
+[01:08.46]You'll be the love of my life when I was young
+你會是我年少時，生命中最深刻的愛
+[01:12.17]When the night is over
+當夜色散盡
+[01:15.18]Don't call me up, I'm already under
+別再打給我，那時我早已沉沉睡去
+[01:19.16]I get a little bit alone sometimes and I miss you again
+偶爾感到些許孤單，對你的思念便再次湧現
+[01:24.21]I'll be the love of your life inside your head
+我會留在你的記憶裡，成為你心中曾經最愛的人
+[01:28.20]When the night is over
+當夜色散盡
+[01:31.15]Don't call me up, I'm already under
+別再打給我，我依舊為失去你而心痛 
+[01:35.94]Audrey said she saw you out past twelve o'clock
+Audre 說，她看見你在午夜十二點後仍在外頭
+[01:39.94]Just because you're hurting doesn't mean I'm not
+你會痛苦，不代表我就不曾受傷
+[01:43.41]If it doesn't go away by the time I turn thirty
+如果等我年滿三十，這份傷痛仍未消散
+[01:48.18]I made a mistake and I'll tell you I'm sorry
+那就表示我犯了錯，而我會親口向你道歉
+[01:50.91]"Sorry"
+「對不起」
+[01:53.31]Sometimes I go blurry-eyed
+有時，淚水會模糊我的視線
+[01:57.37]Small talk and you tell me that you're on fire
+我們閒聊幾句，你說自己最近正意氣風發
+[02:01.35]Lights on and it's black and white, I couldn't stay forever
+燈光亮起，世界只剩黑白分明，我終究無法永遠停留
+[02:08.19]I see the look in your eye and I'm biting my tongue
+望見你眼中的神情，我只能將滿腹的話咽回心底
+[02:12.17]You'll be the love of my life when I was young
+你會是我年少時，生命中最深刻的愛
+[02:16.15]When the night is over
+當夜色散盡
+[02:19.08]Don't call me up, I'm already under
+別再打給我，那時我早已沉沉睡去
+[02:23.33]I get a little bit alone sometimes and I miss you again
+偶爾感到些許孤單，對你的思念便再次湧現
+[02:28.12]I'll be the love of your life inside your head
+我會留在你的記憶裡，成為你心中曾經最愛的人
+[02:32.28]When the night is over
+當夜色散盡
+[02:35.48]Don't call me up, I'm already under
+別再打給我，我依舊為失去你而心痛`;
 
     const IMPERFECT_FOR_YOU_LRC_TEXT = `[00:04.17]My boy, come take my hand
 親愛的，來牽起我的手
@@ -1661,134 +2030,6 @@
 自從遇見你，我便不再如從前那般
 [02:56.02]Imperfect for you
 我並不完美，卻是為你而生的契合`;
-
-    const YUKON_LRC_TEXT = `[00:00.45]In the city, uh, remember you used to drive a Yukon
-在這座城市裡，還記得你從前總開著 Yukon(GMC豪華SUV車款)嗎？
-[00:05.15]I'd pick up whenever you called
-每當你來電，我總會接起
-[00:07.76]In the parkin' lot in Tucson, like, "Uh, are you with me?"
-在圖森的停車場裡，你彷彿問著：「你會陪在我身邊嗎？」
-[00:12.81]In the Phantom with the roof gone, I pull up like Jimmy Neutron
-我開著敞篷的 Phantom(勞斯萊斯幻影) 現身，如同 Jimmy Neutron(動畫主角-天才小子吉米)般引人注目
-[00:17.84]I can help you get a move on, like U-Haul, and I know
-我能助你踏上新的旅程，就像 U-Haul(搬家與貨車租賃公司)般替你打點一切，而我明白
-[00:22.83]Uh, you like to go slow, but we could go faster, tell me the password
-你喜歡循序漸進，但我們也能加快腳步，告訴我那句暗號
-[00:30.53]Slide city, slide city, you know what that means, uh
-悄然來去，悄然穿梭，你明白其中的意思
-[00:35.58]I'm coming up on you quickly, mm, I'll bring nice things, uh
-我正迅速向你靠近，也會為你帶來美好的事物
-[00:40.62]Slide city, slide, plenty other men tryna get in the bed
-悄然來去，悄然靠近，還有許多人試圖與你共度一夜
-[00:45.69]So when it gets lost and sick, I know it's gonna make you beg
-所以當一切失控、令人難以承受時，我知道你終究會開口挽留
-[00:50.73]What would I do (What would I do?), if I didn't love you, babe?
-如果我不愛你，我又該如何是好？
-[00:55.78]What would I do if I didn't lock you, babe?
-如果我沒有認定你、與你相守，我又該如何是好？
-[01:00.83]What would I do (What would I do?), if I didn't love you?
-如果我不愛你，我又該如何是好？
-[01:11.98]Just wanna be the one to give you what you want
-我只想成為那個能給你所求之物的人
-[01:17.02]I could put you in the Yves Saint Laurent
-我能讓你身著 YSL
-[01:19.31]Riding around town with your hair down, uh (True)
-讓你披散著長髮，在城裡自在兜風
-[01:22.50]I know you like it when I tell you what you want
-我知道，你喜歡聽我說出那些合你心意的話
-[01:25.34]Give you back what you done and what you want
-你曾為我付出的一切，我都會回報，也會給你所渴望的
-[01:27.71]I can tell your friends if you don't want them, uh, uh
-若你不想讓朋友知道，我也能替你保守秘密
-[01:33.17]Uh, you like to go slow, but we could go faster, tell me the password (Uh)
-你喜歡循序漸進，但我們也能加快腳步，告訴我那句暗號
-[01:41.29]Slide city, slide city, you know what that means, uh
-悄然來去，悄然穿梭，你明白其中的意思
-[01:46.07]I'm coming up on you quickly, mm, I'll bring nice things, uh (Yeah, baby, I'll bring nice things)
-我正迅速向你靠近，也會為你帶來美好的事物（是的，親愛的，我會帶來美好的一切）
-[01:51.52]Slide city, slide, plenty other men tryna get in the bed
-悄然來去，悄然靠近，還有許多人試圖與你共度一夜
-[01:56.19]So when it gets lost and sick, I know it's gonna make you beg
-所以當一切失控、令人難以承受時，我知道你終究會開口挽留
-[02:01.66]What would I do, uh, if I didn't love you, babe?
-如果我不愛你，我又該如何是好？
-[02:06.31]What would I do if I didn't lock you, babe?
-如果我沒有認定你、與你相守，我又該如何是好？
-[02:11.76]What would I do (What would I do?), if I didn't love you? (What would I, what would I do?)
-如果我不愛你，我又該如何是好？`;
-
-    const TWO_ONE_LRC_TEXT = `[00:15.53]I missed your 21st birthday
-我錯過了你二十一歲的生日
-[00:18.12]I've been up at home
-那晚我獨自在家，徹夜未眠
-[00:19.88]Almost tried to call you, don't know if I should
-幾乎忍不住想打給你，卻不知是否該這麼做
-[00:23.52]Hate to picture you half-drunk happy
-不願想像你微醺著，滿心歡喜的模樣
-[00:27.49]Hate to think you went out without me
-也不願去想，你已能獨自赴約，不再有我陪伴
-[00:31.75]I'm sorry if you blame me, if I were you, I would
-若你因此責怪我，我很抱歉；換作是我，想必也會如此
-[00:36.01]Thought you'd see it coming, but you never could
-我以為你早該有所察覺，沒想到你始終毫無預料
-[00:39.62]I still haven't heard from your family
-至今，我仍未收到你家人的消息
-[00:43.61]But you said your mom always loved me
-但你曾說過，你的母親一直都很喜歡我
-[00:49.34]Sometimes I go blurry-eyed
-有時，淚水會模糊我的視線
-[00:53.32]Small talk and you tell me that you're on fire
-我們閒聊幾句，你說自己最近正意氣風發
-[00:57.56]Lights on and it's black and white, I couldn't stay forever
-燈光亮起，世界只剩黑白分明，我終究無法永遠停留
-[01:04.21]I see the look in your eye and I'm biting my tongue
-望見你眼中的神情，我只能將滿腹的話咽回心底
-[01:08.46]You'll be the love of my life when I was young
-你會是我年少時，生命中最深刻的愛
-[01:12.17]When the night is over
-當夜色散盡
-[01:15.18]Don't call me up, I'm already under
-別再打給我，那時我早已沉沉睡去
-[01:19.16]I get a little bit alone sometimes and I miss you again
-偶爾感到些許孤單，對你的思念便再次湧現
-[01:24.21]I'll be the love of your life inside your head
-我會留在你的記憶裡，成為你心中曾經最愛的人
-[01:28.20]When the night is over
-當夜色散盡
-[01:31.15]Don't call me up, I'm already under
-別再打給我，我依舊為失去你而心痛 
-[01:35.94]Audrey said she saw you out past twelve o'clock
-Audre 說，她看見你在午夜十二點後仍在外頭
-[01:39.94]Just because you're hurting doesn't mean I'm not
-你會痛苦，不代表我就不曾受傷
-[01:43.41]If it doesn't go away by the time I turn thirty
-如果等我年滿三十，這份傷痛仍未消散
-[01:48.18]I made a mistake and I'll tell you I'm sorry
-那就表示我犯了錯，而我會親口向你道歉
-[01:50.91]"Sorry"
-「對不起」
-[01:53.31]Sometimes I go blurry-eyed
-有時，淚水會模糊我的視線
-[01:57.37]Small talk and you tell me that you're on fire
-我們閒聊幾句，你說自己最近正意氣風發
-[02:01.35]Lights on and it's black and white, I couldn't stay forever
-燈光亮起，世界只剩黑白分明，我終究無法永遠停留
-[02:08.19]I see the look in your eye and I'm biting my tongue
-望見你眼中的神情，我只能將滿腹的話咽回心底
-[02:12.17]You'll be the love of my life when I was young
-你會是我年少時，生命中最深刻的愛
-[02:16.15]When the night is over
-當夜色散盡
-[02:19.08]Don't call me up, I'm already under
-別再打給我，那時我早已沉沉睡去
-[02:23.33]I get a little bit alone sometimes and I miss you again
-偶爾感到些許孤單，對你的思念便再次湧現
-[02:28.12]I'll be the love of your life inside your head
-我會留在你的記憶裡，成為你心中曾經最愛的人
-[02:32.28]When the night is over
-當夜色散盡
-[02:35.48]Don't call me up, I'm already under
-別再打給我，我依舊為失去你而心痛`;
 
     const BLUE_BLUES_LRC_TEXT = `[00:12.54]Days go by and I’m not feeling better
 日子一天天過去，我卻始終沒有好轉
@@ -1913,7 +2154,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetY: 0.0,
             duration: 195,
             volume: 0.60,
-            lyrics: []
+            lyrics: parseLrc(SPARK_LRC_TEXT)
           },
           {
             title: "BLUE",
@@ -1955,7 +2196,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetY: 0.0,
             duration: 210,
             volume: 0.60,
-            lyrics: []
+            lyrics: parseLrc(SPEED_OF_SUMMER_LRC_TEXT)
           },
           {
             title: "Time Walking On Memories기억을 걷는 시간",
@@ -2046,7 +2287,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             imgOffsetY: 0.0,
             duration: 245,
             volume: 1.0,
-            lyrics: []
+            lyrics: parseLrc(GEOTJITMAL_LRC_TEXT)
           },
           {
             title: "Only Wanna Give It To You",
@@ -2108,18 +2349,20 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       }
     ];
 
-    // 本地快取防呆機制：確保讀取有效陣列，若無效則強制 fallback 回傳 TWO_PLAYLISTS_DATA
-    let rawLocal = null;
+    let store = TWO_PLAYLISTS_DATA;
     try {
-      rawLocal = JSON.parse(localStorage.getItem('winter_playlist_store_v60'));
+      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v70'));
+      if (Array.isArray(saved) && saved.length > 0 && saved[0].songs && saved[0].songs.length > 0) {
+        store = saved;
+      }
     } catch(e) {
-      rawLocal = null;
+      store = TWO_PLAYLISTS_DATA;
     }
-    let store = (Array.isArray(rawLocal) && rawLocal.length > 0) ? rawLocal : TWO_PLAYLISTS_DATA;
+
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v60', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v70', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2541,17 +2784,20 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     });
     nativeAudio.addEventListener('playing', () => setPlayState(true));
     nativeAudio.addEventListener('pause', () => setPlayState(false));
+
     nativeAudio.addEventListener('ended', () => {
       playNext();
     });
 
     function playActiveSong(isNewTrack = false) {
+      if (!store || !store[plIdx] || !store[plIdx].songs[trackIdx]) return;
       const curPl = store[plIdx];
-      if (!curPl || !curPl.songs[trackIdx]) return;
       const song = curPl.songs[trackIdx];
 
       renderUI();
       updateMediaSession(song, curPl);
+
+      document.title = `${song.title} - WINTER PLAYLIST`;
 
       if (isNewTrack || !hasPlayedFirstTrack) {
         triggerSlow15sSpin();
@@ -2571,7 +2817,6 @@ Audre 說，她看見你在午夜十二點後仍在外頭
       nativeAudio.volume = Math.min(1.0, Math.max(0, targetVolume));
 
       if (isNewTrack || nativeAudio.src !== directSrc) {
-        nativeAudio.pause();
         currentSec = 0;
         updateProgressUI(0, totalDuration);
 
@@ -2580,8 +2825,11 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
         const p = nativeAudio.play();
         if (p !== undefined) {
-          p.then(() => setPlayState(true)).catch(err => {
-            console.log("Waiting for user gesture:", err);
+          p.then(() => {
+            setPlayState(true);
+            if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
+          }).catch(err => {
+            console.log("Audio waiting for gesture:", err);
             setPlayState(false);
           });
         }
@@ -2591,8 +2839,11 @@ Audre 說，她看見你在午夜十二點後仍在外頭
         }
         const p = nativeAudio.play();
         if (p !== undefined) {
-          p.then(() => setPlayState(true)).catch(err => {
-            console.log("Waiting for gesture:", err);
+          p.then(() => {
+            setPlayState(true);
+            if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
+          }).catch(err => {
+            console.log("Audio waiting for gesture:", err);
             setPlayState(false);
           });
         }
@@ -2815,7 +3066,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     };
 
     document.getElementById('menu-btn-reset').onclick = () => {
-      localStorage.removeItem('winter_playlist_store_v60');
+      localStorage.removeItem('winter_playlist_store_v70');
       window.location.reload();
     };
 
