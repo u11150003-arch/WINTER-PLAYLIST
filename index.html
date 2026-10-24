@@ -650,7 +650,7 @@
     </div>
   </footer>
 
-  <!-- 右上角導覽選單 (包含重整、外連、管理者與 Threads 聯繫欄位) -->
+  <!-- 右上角導覽選單 -->
   <div class="modal-veil" id="nav-modal">
     <div class="modal-inner" style="max-width: 360px;">
       <h3>WINTER SPACE</h3>
@@ -679,8 +679,8 @@
           <div class="menu-left-content">
             <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/></svg>
             <div>
-              <div>Retro CD Player</div>
-              <span class="desc">前往復古CD隨身聽</span>
+              <div>WINTER Retro CD Player</div>
+              <span class="desc">前往金旼炡CD隨身聽</span>
             </div>
           </div>
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -692,6 +692,18 @@
             <div>
               <div>WINTER WILD WEST</div>
               <span class="desc">前往荒野西部視訊</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <!-- KARINA PLAYLIST 導覽項目 -->
+        <a class="menu-link-item" href="https://u11150003-arch.github.io/KARINA-PLAYLIST/" target="_blank" rel="noopener">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <div>
+              <div>KARINA PLAYLIST</div>
+              <span class="desc">前往劉知珉播放清單</span>
             </div>
           </div>
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -943,81 +955,85 @@
       return `[${String(m).padStart(2,'0')}:${String(s).padStart(5,'0')}]`;
     }
 
+    // Lips 完整動態時間軸歌詞
     const LIPS_LRC_TEXT = `[00:12.21]오늘따라 건조한 느낌
-今天格外乏味
+今天格外感到乏味
 [00:18.70]목소리 쉽게 나오질 않아
 聲音不容易發出
 [00:27.10]한참을 못 했던 말 너무 많은데
-有太多一直沒說出來的話
+有太多話，藏在心底許久
 [00:34.81]내 말 잘 안 들릴까 봐 겁나
-害怕你聽不清我說的話
+害怕聽不清我說的話
 [00:41.99]긴 긴 시간이 지나간 사이
-漫長的時間已經流逝
-[00:49.65]여전이 내 맘은 그댈 향하고
-我的心依舊向著你
-[00:56.55]늦은 건 아니라 고 말해줘요
-告訴我現在還不算晚
+漫長歲月流逝之間
+[00:49.65]여전히 내 맘은 그댈 향하고
+我的心依然朝向你
+[00:56.55]늦은 건 아니라고 말해줘요
+請告訴我，現在還不算太晚
 [01:04.54]숨이 차고 조금은 떨리는데
-雖然喘不過氣，又有些顫抖
+有些喘不過氣，聲音也微微顫抖
 [01:08.47]오랜만이라 이 고백
-這是我久違的告白
+這份久違的告白
 [01:12.19]I love you
+我愛你
 [01:14.86]완벽한 타이밍 아니라도
-就算不是完美時機
+即使時機不夠完美
 [01:19.64]눈 돌리지 말고 내 입모양을 봐, babe
-不要把眼睛移開 看著我的嘴唇 寶貝
+別移開視線，看著我的唇形，親愛的
 [01:25.96]귀 기울여 듣지 말고
-不需傾聽 
+不必費力傾聽
 [01:30.47]그냥 내 입술을 읽어봐
-只要讀懂我的嘴唇就好
+只要讀懂我的唇語
 [01:34.72]아주 천천히 말해줄게
-我會慢慢地告訴你
+我會放慢語速，慢慢告訴你
 [01:46.10]긴 긴 여정이 지나간 사이
-漫長的旅程過去了
-[01:53.54]속에서만 매일 표현 못하고
-只在心裡無法表達
+漫長的旅程已過
+[01:53.54]속에서만 매일 표현 못 하고
+那些心意，日復一日只藏在心底，始終無法表達
 [02:00.18]그대도 같은 맘이라 해줘요
-告訴我你也有一樣的心情
+請告訴我，你也懷著同樣的心情
 [02:06.29]입이 말라 전보다 떨리는데
-變得乾燥比以前更加緊張
+嘴唇乾澀，心情也比以往更加緊張
 [02:12.39]오랜만이라 이 고백
-這是我久違的告白
+這份久違的告白
 [02:16.06]I love you
+我愛你
 [02:18.73]완벽한 타이밍 아니라도
-就算不是完美時機
+即使時機不夠完美
 [02:23.52]눈 돌리지 말고 내 입모양을 봐, babe
-不要把眼睛移開 看著我的嘴唇 寶貝
+別移開目光，看著我的唇形，親愛的
 [02:29.90]귀 기울여 듣지 말고
-不需傾聽
+不必費力傾聽
 [02:34.14]그냥 내 입술을 읽어봐
-只要讀懂我的嘴唇就好
+只要讀懂我的唇語
 [02:38.18]아주 천천히 말해줄게
-我會慢慢地更準確地
+我會放慢語速，慢慢地
 [02:47.16]말해줄게
-告訴你
-[02:49.82]우린 서로 가 동시에 좋아하는
-在我們互相喜歡的時刻
+準確地告訴你
+[02:49.82]우린 서로가 동시에 좋아하는
+我們在同一時刻心動
 [02:55.34]어려운 확률 속에
-在艱難的機率中
+在微乎其微的機率裡
 [02:59.02]다 들어온 것 같아
-好像一切都發生了
+好像一切都在這了
 [03:05.63]밤새워 반복해줄게
-徹夜重複此話題
+我願徹夜地訴說
 [03:10.40]크게 말 못 하고 조용히
-無法大聲說出 只能安靜地
+無法大聲說出口，只能安靜地
 [03:14.11]입가를 촉촉이 하고
-浸濕我的嘴角
+潤濕嘴唇
 [03:17.80]I love you
+我愛你
 [03:20.71]완벽한 타이밍 온 것 같아
 似乎是完美時機
 [03:25.50]진지한 내 표정 내 입모양을 봐, babe
-我誠摯的表情和嘴型 寶貝
+看著我誠摯的表情和唇形，親愛的
 [03:31.91]두 손으로 귀를 막고
 用雙手摀住耳朵
 [03:35.90]그냥 내 입술을 읽어봐
-試著讀懂我的唇語
+只要讀懂我的唇語
 [03:40.15]아주 천천히 말해줄게
-我會慢慢地告訴你`;
+我會放慢語速，慢慢告訴你`;
 
     const SPARK_LRC_TEXT = `[00:18.15]Woo-Ha
 [00:25.13]Whoo
@@ -2351,7 +2367,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     let store = TWO_PLAYLISTS_DATA;
     try {
-      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v70'));
+      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v75'));
       if (Array.isArray(saved) && saved.length > 0 && saved[0].songs && saved[0].songs.length > 0) {
         store = saved;
       }
@@ -2362,7 +2378,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v70', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v75', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2708,768 +2724,4 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     window.addEventListener('mouseup', onPointerUp);
 
     stageEl.addEventListener('touchstart', onPointerDown, { passive: true });
-    window.addEventListener('touchmove', onPointerMove, { passive: true });
-    window.addEventListener('touchend', onPointerUp);
-
-    function triggerResetView() {
-      isAutoRotating = false;
-      targetRotX = 0;
-      targetRotY = 0;
-    }
-
-    window.addEventListener('resize', resizeCamera);
-    resizeCamera();
-
-    function renderLoop() {
-      requestAnimationFrame(renderLoop);
-
-      if (isAutoRotating) {
-        const elapsed = performance.now() - autoRotStartTime;
-        const progress = Math.min(1, elapsed / AUTO_ROT_DURATION);
-        turntableGroup.rotation.y = progress * (Math.PI * 2);
-        turntableGroup.rotation.x = THREE.MathUtils.lerp(turntableGroup.rotation.x, 0, 0.08);
-
-        if (progress >= 1) {
-          isAutoRotating = false;
-          turntableGroup.rotation.y = 0;
-          targetRotY = 0;
-          targetRotX = 0;
-        }
-      } else {
-        turntableGroup.rotation.y = THREE.MathUtils.lerp(turntableGroup.rotation.y, targetRotY, 0.1);
-        turntableGroup.rotation.x = THREE.MathUtils.lerp(turntableGroup.rotation.x, targetRotX, 0.1);
-      }
-
-      if (isPlaying) {
-        discGroup.rotation.z -= 0.010;
-        discGroup.position.x = THREE.MathUtils.lerp(discGroup.position.x, VINYL_OUT_X, 0.06);
-      } else {
-        discGroup.position.x = THREE.MathUtils.lerp(discGroup.position.x, VINYL_REST_X, 0.06);
-      }
-
-      renderer.render(scene, camera);
-    }
-    renderLoop();
-
-    /* -------------------------------------------------------------
-     * 4. 音訊系統
-     * ------------------------------------------------------------*/
-    function setPlayState(active) {
-      isPlaying = active;
-      const svg = document.getElementById('play-svg-icon');
-      if (active) {
-        svg.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-      } else {
-        svg.innerHTML = '<path d="M8 5v14l11-7z"/>';
-      }
-    }
-
-    function updateProgressUI(cur, total) {
-      currentSec = cur;
-      totalDuration = total || 211;
-      const pct = Math.min(100, Math.max(0, (cur / totalDuration) * 100));
-      document.getElementById('seek-progress').style.width = `${pct}%`;
-      const curM = Math.floor(cur / 60);
-      const curS = Math.floor(cur % 60);
-      const totM = Math.floor(totalDuration / 60);
-      const totS = Math.floor(totalDuration % 60);
-      document.getElementById('lbl-curr').textContent = `${String(curM).padStart(2,'0')}:${String(curS).padStart(2,'0')}`;
-      document.getElementById('lbl-total').textContent = `${String(totM).padStart(2,'0')}:${String(totS).padStart(2,'0')}`;
-      syncLyrics(cur);
-    }
-
-    nativeAudio.addEventListener('timeupdate', () => {
-      if (isDraggingSeek) return;
-      updateProgressUI(nativeAudio.currentTime, nativeAudio.duration || totalDuration);
-    });
-    nativeAudio.addEventListener('playing', () => setPlayState(true));
-    nativeAudio.addEventListener('pause', () => setPlayState(false));
-
-    nativeAudio.addEventListener('ended', () => {
-      playNext();
-    });
-
-    function playActiveSong(isNewTrack = false) {
-      if (!store || !store[plIdx] || !store[plIdx].songs[trackIdx]) return;
-      const curPl = store[plIdx];
-      const song = curPl.songs[trackIdx];
-
-      renderUI();
-      updateMediaSession(song, curPl);
-
-      document.title = `${song.title} - WINTER PLAYLIST`;
-
-      if (isNewTrack || !hasPlayedFirstTrack) {
-        triggerSlow15sSpin();
-        hasPlayedFirstTrack = true;
-      }
-
-      totalDuration = song.duration || 211;
-      const targetVolume = (typeof song.volume === 'number') ? song.volume : (plIdx === 1 ? 1.0 : 0.65);
-
-      let directSrc = song.source.replace(/^\.\//, '');
-      if (!directSrc.startsWith('http')) {
-        directSrc = CD_PROJECT_BASE + encodeURIComponent(directSrc).replace(/%2F/g, '/');
-      } else if (directSrc.includes('github.com') && directSrc.includes('/blob/')) {
-        directSrc = directSrc.replace('github.com', 'raw.githubusercontent.com').replace('/blob/', '/');
-      }
-
-      nativeAudio.volume = Math.min(1.0, Math.max(0, targetVolume));
-
-      if (isNewTrack || nativeAudio.src !== directSrc) {
-        currentSec = 0;
-        updateProgressUI(0, totalDuration);
-
-        nativeAudio.src = directSrc;
-        nativeAudio.currentTime = 0;
-
-        const p = nativeAudio.play();
-        if (p !== undefined) {
-          p.then(() => {
-            setPlayState(true);
-            if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
-          }).catch(err => {
-            console.log("Audio waiting for gesture:", err);
-            setPlayState(false);
-          });
-        }
-      } else {
-        if (currentSec > 0 && Math.abs(nativeAudio.currentTime - currentSec) > 1) {
-          nativeAudio.currentTime = currentSec;
-        }
-        const p = nativeAudio.play();
-        if (p !== undefined) {
-          p.then(() => {
-            setPlayState(true);
-            if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
-          }).catch(err => {
-            console.log("Audio waiting for gesture:", err);
-            setPlayState(false);
-          });
-        }
-      }
-    }
-
-    function pauseActiveSong() {
-      setPlayState(false);
-      currentSec = nativeAudio.currentTime;
-      nativeAudio.pause();
-      if ('mediaSession' in navigator) {
-        navigator.mediaSession.playbackState = "paused";
-      }
-    }
-
-    /* -------------------------------------------------------------
-     * 5. 進度條拖曳
-     * ------------------------------------------------------------*/
-    const seekContainer = document.getElementById('seek-container');
-    const seekProgress = document.getElementById('seek-progress');
-
-    function getSeekFraction(e) {
-      const rect = seekContainer.getBoundingClientRect();
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      const pos = clientX - rect.left;
-      return Math.min(1, Math.max(0, pos / rect.width));
-    }
-
-    function handleSeekMove(e) {
-      if (!isDraggingSeek) return;
-      const frac = getSeekFraction(e);
-      seekProgress.style.width = `${frac * 100}%`;
-      const cur = frac * totalDuration;
-      const m = Math.floor(cur / 60);
-      const s = Math.floor(cur % 60);
-      document.getElementById('lbl-curr').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    }
-
-    function handleSeekEnd(e) {
-      if (!isDraggingSeek) return;
-      isDraggingSeek = false;
-      const frac = getSeekFraction(e.changedTouches ? e.changedTouches[0] : e);
-      currentSec = frac * totalDuration;
-
-      nativeAudio.currentTime = currentSec;
-      updateProgressUI(currentSec, totalDuration);
-    }
-
-    seekContainer.addEventListener('mousedown', (e) => { isDraggingSeek = true; handleSeekMove(e); });
-    window.addEventListener('mousemove', handleSeekMove);
-    window.addEventListener('mouseup', handleSeekEnd);
-
-    seekContainer.addEventListener('touchstart', (e) => { isDraggingSeek = true; handleSeekMove(e); }, { passive: false });
-    window.addEventListener('touchmove', handleSeekMove, { passive: false });
-    window.addEventListener('touchend', handleSeekEnd);
-
-    /* -------------------------------------------------------------
-     * 6. 歌詞渲染
-     * ------------------------------------------------------------*/
-    function syncLyrics(sec) {
-      const song = store[plIdx]?.songs[trackIdx];
-      if (!song || !song.lyrics) return;
-
-      let idx = -1;
-      for (let i = 0; i < song.lyrics.length; i++) {
-        if (sec >= song.lyrics[i].time) idx = i;
-        else break;
-      }
-
-      const rows = document.querySelectorAll('.lyric-row');
-      rows.forEach((r, i) => {
-        if (i === idx) {
-          if (!r.classList.contains('active')) {
-            r.classList.add('active');
-            const scroller = document.getElementById('lyrics-scroller');
-            scroller.scrollTo({ top: r.offsetTop - (scroller.clientHeight / 2) + 12, behavior: 'smooth' });
-          }
-        } else {
-          r.classList.remove('active');
-        }
-      });
-    }
-
-    function renderLyricsList() {
-      const scroller = document.getElementById('lyrics-scroller');
-      scroller.innerHTML = '';
-      
-      scroller.style.scrollBehavior = 'auto';
-      scroller.scrollTop = 0;
-      setTimeout(() => {
-        scroller.style.scrollBehavior = 'smooth';
-      }, 50);
-
-      const song = store[plIdx]?.songs[trackIdx];
-
-      if (!song || !song.lyrics || song.lyrics.length === 0) {
-        scroller.innerHTML = '<div class="lyric-row"><div class="lyric-primary">純音樂 / Instrumental</div></div>';
-        return;
-      }
-
-      song.lyrics.forEach(l => {
-        const div = document.createElement('div');
-        div.className = 'lyric-row';
-
-        const pSpan = document.createElement('div');
-        pSpan.className = 'lyric-primary';
-        pSpan.textContent = l.text;
-        div.appendChild(pSpan);
-
-        if (l.trans) {
-          const tSpan = document.createElement('div');
-          tSpan.className = 'lyric-trans';
-          tSpan.textContent = l.trans;
-          div.appendChild(tSpan);
-        }
-
-        div.onclick = () => {
-          currentSec = l.time;
-          nativeAudio.currentTime = currentSec;
-          playActiveSong(false);
-        };
-        scroller.appendChild(div);
-      });
-    }
-
-    function renderUI() {
-      if (!store || !store[plIdx]) return;
-      const curPl = store[plIdx];
-      const song = curPl.songs[trackIdx];
-      if (!song) return;
-
-      document.getElementById('disp-title').textContent = song.title;
-      document.getElementById('disp-artist').textContent = song.artist || "WINTER";
-
-      applyCoverTo3D(
-        song.cover || curPl.cover, 
-        song.backCover, 
-        song.labelImg, 
-        song.imgScale || 1.0, 
-        song.imgOffsetX || 0.0, 
-        song.imgOffsetY || 0.0
-      );
-      renderLyricsList();
-      populateDropdowns();
-    }
-
-    function playNext() {
-      const pl = store[plIdx];
-      if (!pl || pl.songs.length === 0) return;
-      trackIdx = (trackIdx + 1) % pl.songs.length;
-      currentSec = 0;
-      playActiveSong(true);
-    }
-
-    function playPrev() {
-      const pl = store[plIdx];
-      if (!pl || pl.songs.length === 0) return;
-      trackIdx = (trackIdx - 1 + pl.songs.length) % pl.songs.length;
-      currentSec = 0;
-      playActiveSong(true);
-    }
-
-    document.getElementById('btn-play').onclick = () => {
-      if (isPlaying) {
-        pauseActiveSong();
-      } else {
-        playActiveSong(false);
-      }
-    };
-    document.getElementById('btn-next').onclick = playNext;
-    document.getElementById('btn-prev').onclick = playPrev;
-
-    function populateDropdowns() {
-      const pSel = document.getElementById('sel-playlist');
-      pSel.innerHTML = '';
-      store.forEach((p, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        opt.textContent = p.name;
-        if (i === plIdx) opt.selected = true;
-        pSel.appendChild(opt);
-      });
-
-      const sSel = document.getElementById('sel-song');
-      sSel.innerHTML = '';
-      const songs = store[plIdx]?.songs || [];
-      songs.forEach((s, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        opt.textContent = s.title;
-        if (i === trackIdx) opt.selected = true;
-        sSel.appendChild(opt);
-      });
-    }
-
-    document.getElementById('sel-playlist').onchange = (e) => {
-      plIdx = parseInt(e.target.value);
-      trackIdx = 0;
-      currentSec = 0;
-      playActiveSong(true);
-    };
-
-    document.getElementById('sel-song').onchange = (e) => {
-      trackIdx = parseInt(e.target.value);
-      currentSec = 0;
-      playActiveSong(true);
-    };
-
-    /* -------------------------------------------------------------
-     * 7. 導覽選單與管理後台控制
-     * ------------------------------------------------------------*/
-    const navModal = document.getElementById('nav-modal');
-    const mountPoint = document.getElementById('admin-mount-point');
-
-    document.getElementById('btn-open-menu').onclick = () => {
-      navModal.style.display = 'flex';
-    };
-    document.getElementById('btn-close-nav').onclick = () => {
-      navModal.style.display = 'none';
-    };
-
-    document.getElementById('menu-btn-reset').onclick = () => {
-      localStorage.removeItem('winter_playlist_store_v70');
-      window.location.reload();
-    };
-
-    document.getElementById('menu-btn-admin').onclick = () => {
-      navModal.style.display = 'none';
-      openAuthModal();
-    };
-
-    function openAuthModal() {
-      mountPoint.innerHTML = document.getElementById('auth-tpl').innerHTML;
-      const authInput = document.getElementById('auth-input');
-      authInput.focus();
-
-      document.getElementById('btn-auth-close').onclick = () => { mountPoint.innerHTML = ''; };
-      document.getElementById('btn-auth-submit').onclick = () => {
-        if (authInput.value === '0401') {
-          openAdminDashboard();
-        } else {
-          alert('驗證失敗！');
-        }
-      };
-    }
-
-    document.getElementById('logo-trigger').onclick = openAuthModal;
-
-    function updateLivePreviewBox() {
-      const title = document.getElementById('form-song-title')?.value.trim() || '未命名歌曲';
-      const artist = document.getElementById('form-song-artist')?.value.trim() || 'WINTER';
-      const rawCover = document.getElementById('form-song-cover')?.value.trim() || COVER_LIPS;
-      const direct = normalizeImageUrl(rawCover);
-
-      const scale = parseFloat(document.getElementById('form-img-scale')?.value || 1.0);
-      const ox = parseFloat(document.getElementById('form-img-ox')?.value || 0.0);
-      const oy = parseFloat(document.getElementById('form-img-oy')?.value || 0.0);
-
-      const thumbEl = document.getElementById('preview-box-thumb');
-      const titleEl = document.getElementById('preview-box-title');
-      const artistEl = document.getElementById('preview-box-artist');
-
-      if (titleEl) titleEl.textContent = title;
-      if (artistEl) artistEl.textContent = artist;
-      if (thumbEl) {
-        thumbEl.style.backgroundImage = `url("${direct}")`;
-        thumbEl.style.backgroundSize = `${scale * 100}%`;
-        thumbEl.style.backgroundPosition = `${50 + ox * 100}% ${50 + oy * 100}%`;
-      }
-    }
-
-    function openAdminDashboard() {
-      mountPoint.innerHTML = document.getElementById('admin-tpl').innerHTML;
-
-      const scaleSlider = document.getElementById('scale-slider');
-      scaleSlider.value = modelScale;
-      document.getElementById('scale-val-lbl').textContent = `${modelScale}x`;
-      scaleSlider.oninput = (e) => {
-        modelScale = parseFloat(e.target.value);
-        document.getElementById('scale-val-lbl').textContent = `${modelScale}x`;
-        turntableGroup.scale.set(modelScale, modelScale, modelScale);
-      };
-
-      const volSlider = document.getElementById('form-song-vol');
-      volSlider.oninput = (e) => {
-        document.getElementById('form-vol-lbl').textContent = `${parseFloat(e.target.value).toFixed(2)}x`;
-      };
-
-      const imgScale = document.getElementById('form-img-scale');
-      const imgOx = document.getElementById('form-img-ox');
-      const imgOy = document.getElementById('form-img-oy');
-
-      imgScale.oninput = (e) => {
-        document.getElementById('lbl-img-scale').textContent = `${parseFloat(e.target.value).toFixed(2)}x`;
-        updateLivePreviewBox();
-      };
-      imgOx.oninput = (e) => {
-        document.getElementById('lbl-img-ox').textContent = `${Math.round(e.target.value * 100)}%`;
-        updateLivePreviewBox();
-      };
-      imgOy.oninput = (e) => {
-        document.getElementById('lbl-img-oy').textContent = `${Math.round(e.target.value * 100)}%`;
-        updateLivePreviewBox();
-      };
-
-      document.getElementById('form-song-title').oninput = updateLivePreviewBox;
-      document.getElementById('form-song-artist').oninput = updateLivePreviewBox;
-      document.getElementById('form-song-cover').oninput = updateLivePreviewBox;
-
-      document.getElementById('btn-pick-img').onclick = () => document.getElementById('local-img-picker').click();
-      document.getElementById('local-img-picker').onchange = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          document.getElementById('form-song-cover').value = event.target.result;
-          document.getElementById('img-picker-status').textContent = `已載入: ${file.name}`;
-          updateLivePreviewBox();
-        };
-        reader.readAsDataURL(file);
-      };
-
-      document.getElementById('btn-pick-label-img').onclick = () => document.getElementById('local-label-img-picker').click();
-      document.getElementById('local-label-img-picker').onchange = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          document.getElementById('form-song-label-img').value = event.target.result;
-          document.getElementById('label-img-picker-status').textContent = `已載入: ${file.name}`;
-        };
-        reader.readAsDataURL(file);
-      };
-
-      document.getElementById('btn-pick-back-img').onclick = () => document.getElementById('local-back-img-picker').click();
-      document.getElementById('local-back-img-picker').onchange = (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          document.getElementById('form-song-back-cover').value = event.target.result;
-          document.getElementById('back-img-picker-status').textContent = `已載入: ${file.name}`;
-        };
-        reader.readAsDataURL(file);
-      };
-
-      document.getElementById('btn-close-admin').onclick = () => {
-        mountPoint.innerHTML = '';
-        persistData();
-        renderUI();
-      };
-
-      document.getElementById('btn-save-song').onclick = saveSongHandler;
-      document.getElementById('btn-cancel-edit').onclick = resetSongForm;
-      document.getElementById('btn-add-pl').onclick = addPlaylistHandler;
-
-      document.getElementById('btn-copy-code').onclick = () => {
-        navigator.clipboard.writeText(document.documentElement.outerHTML).then(() => {
-          alert('已將當前完整 HTML 程式碼複製到剪貼簿！');
-        });
-      };
-
-      document.getElementById('btn-dl-html').onclick = () => {
-        const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'index.html';
-        a.click();
-      };
-
-      renderAdminTree();
-      updateLivePreviewBox();
-    }
-
-    function renderAdminTree() {
-      const targetPlSel = document.getElementById('form-pl-target');
-      if (!targetPlSel) return;
-      targetPlSel.innerHTML = '';
-      store.forEach((p, idx) => {
-        const opt = document.createElement('option');
-        opt.value = idx;
-        opt.textContent = p.name;
-        targetPlSel.appendChild(opt);
-      });
-
-      const tree = document.getElementById('admin-tree-view');
-      tree.innerHTML = '';
-      store.forEach((p, pI) => {
-        const pBox = document.createElement('div');
-        pBox.style.cssText = "margin-bottom:12px; background:#111216; padding:10px; border-radius:6px; border:1px solid #282a35;";
-        
-        const isFirstPl = pI === 0;
-        const isLastPl = pI === store.length - 1;
-
-        pBox.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid #222530; padding-bottom:6px;">
-            <strong style="color:#e4e4e7; font-size:0.84rem;">📁 ${p.name} (${p.songs.length} 首)</strong>
-            <div style="display:flex; gap:4px;">
-              <button class="btn-order" onclick="window.movePl(${pI}, -1)" ${isFirstPl ? 'disabled' : ''} title="上移歌單">⬆</button>
-              <button class="btn-order" onclick="window.movePl(${pI}, 1)" ${isLastPl ? 'disabled' : ''} title="下移歌單">⬇</button>
-              <button class="btn-act btn-del" onclick="window.delPl(${pI})" style="margin-left:4px;">刪除歌單</button>
-            </div>
-          </div>
-        `;
-
-        p.songs.forEach((s, sI) => {
-          const isFirstSong = sI === 0;
-          const isLastSong = sI === p.songs.length - 1;
-          const volDisplay = typeof s.volume === 'number' ? s.volume : (pI === 1 ? 1.0 : 0.65);
-
-          const sRow = document.createElement('div');
-          sRow.className = 'song-item-row';
-          sRow.innerHTML = `
-            <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:180px;">🎵 ${sI + 1}. ${s.title} <small style="color:#71717a;">(${volDisplay.toFixed(2)}x)</small></span>
-            <div class="song-actions">
-              <button class="btn-order" onclick="window.moveSong(${pI}, ${sI}, -1)" ${isFirstSong ? 'disabled' : ''} title="上移">⬆</button>
-              <button class="btn-order" onclick="window.moveSong(${pI}, ${sI}, 1)" ${isLastSong ? 'disabled' : ''} title="下移">⬇</button>
-              <button class="btn-act btn-edit" onclick="window.editS(${pI}, ${sI})">編輯</button>
-              <button class="btn-act btn-del" onclick="window.delS(${pI}, ${sI})">刪除</button>
-            </div>
-          `;
-          pBox.appendChild(sRow);
-        });
-        tree.appendChild(pBox);
-      });
-    }
-
-    window.movePl = (pI, dir) => {
-      const targetIndex = pI + dir;
-      if (targetIndex < 0 || targetIndex >= store.length) return;
-      const temp = store[pI];
-      store[pI] = store[targetIndex];
-      store[targetIndex] = temp;
-      if (plIdx === pI) plIdx = targetIndex;
-      else if (plIdx === targetIndex) plIdx = pI;
-      persistData();
-      renderAdminTree();
-      renderUI();
-    };
-
-    window.moveSong = (pI, sI, dir) => {
-      const songs = store[pI].songs;
-      const targetIndex = sI + dir;
-      if (targetIndex < 0 || targetIndex >= songs.length) return;
-      const temp = songs[sI];
-      songs[sI] = songs[targetIndex];
-      songs[targetIndex] = temp;
-      if (plIdx === pI) {
-        if (trackIdx === sI) trackIdx = targetIndex;
-        else if (trackIdx === targetIndex) trackIdx = sI;
-      }
-      persistData();
-      renderAdminTree();
-      renderUI();
-    };
-
-    window.delPl = (pI) => {
-      if (store.length <= 1) return alert('請至少保留一個歌單！');
-      if (confirm(`確定刪除歌單《${store[pI].name}》？`)) {
-        store.splice(pI, 1);
-        if (plIdx >= store.length) plIdx = 0;
-        trackIdx = 0;
-        persistData();
-        renderAdminTree();
-        renderUI();
-      }
-    };
-
-    window.delS = (pI, sI) => {
-      store[pI].songs.splice(sI, 1);
-      if (plIdx === pI && trackIdx >= store[pI].songs.length) {
-        trackIdx = Math.max(0, store[pI].songs.length - 1);
-      }
-      persistData();
-      renderAdminTree();
-      renderUI();
-    };
-
-    window.editS = (pI, sI) => {
-      const s = store[pI].songs[sI];
-      document.getElementById('form-mode-title').textContent = `✦ 編輯歌曲: ${s.title}`;
-      document.getElementById('edit-song-id').value = `${pI}_${sI}`;
-      document.getElementById('form-pl-target').value = pI;
-      document.getElementById('form-song-title').value = s.title;
-      document.getElementById('form-song-artist').value = s.artist || 'WINTER';
-      document.getElementById('form-song-source').value = s.source;
-
-      const currentVol = (typeof s.volume === 'number') ? s.volume : (pI === 1 ? 1.0 : 0.65);
-      document.getElementById('form-song-vol').value = currentVol;
-      document.getElementById('form-vol-lbl').textContent = `${currentVol.toFixed(2)}x`;
-
-      const currentScale = typeof s.imgScale === 'number' ? s.imgScale : 1.0;
-      const currentOx = typeof s.imgOffsetX === 'number' ? s.imgOffsetX : 0.0;
-      const currentOy = typeof s.imgOffsetY === 'number' ? s.imgOffsetY : 0.0;
-
-      document.getElementById('form-img-scale').value = currentScale;
-      document.getElementById('lbl-img-scale').textContent = `${currentScale.toFixed(2)}x`;
-      document.getElementById('form-img-ox').value = currentOx;
-      document.getElementById('lbl-img-ox').textContent = `${Math.round(currentOx * 100)}%`;
-      document.getElementById('form-img-oy').value = currentOy;
-      document.getElementById('lbl-img-oy').textContent = `${Math.round(currentOy * 100)}%`;
-
-      document.getElementById('form-song-cover').value = s.cover || '';
-      document.getElementById('form-song-label-img').value = s.labelImg || '';
-      document.getElementById('form-song-back-cover').value = s.backCover || '';
-
-      const lyricsStr = (s.lyrics || []).map(l => {
-        let textPart = `${formatLrcTime(l.time)} ${l.text}`;
-        if (l.trans) textPart += `\n${l.trans}`;
-        return textPart;
-      }).join('\n');
-      document.getElementById('form-song-lyrics').value = lyricsStr;
-
-      document.getElementById('btn-cancel-edit').style.display = 'inline-block';
-      document.getElementById('admin-modal').scrollTo({ top: 0, behavior: 'smooth' });
-
-      updateLivePreviewBox();
-    };
-
-    function resetSongForm() {
-      document.getElementById('form-mode-title').textContent = '✦ 新增歌曲';
-      document.getElementById('edit-song-id').value = '';
-      document.getElementById('form-song-title').value = '';
-      document.getElementById('form-song-artist').value = 'WINTER';
-      document.getElementById('form-song-source').value = '';
-      document.getElementById('form-song-vol').value = 1.0;
-      document.getElementById('form-vol-lbl').textContent = '1.00x';
-
-      document.getElementById('form-img-scale').value = 1.0;
-      document.getElementById('lbl-img-scale').textContent = '1.00x';
-      document.getElementById('form-img-ox').value = 0.0;
-      document.getElementById('lbl-img-ox').textContent = '0%';
-      document.getElementById('form-img-oy').value = 0.0;
-      document.getElementById('lbl-img-oy').textContent = '0%';
-
-      document.getElementById('form-song-cover').value = '';
-      document.getElementById('form-song-label-img').value = '';
-      document.getElementById('form-song-back-cover').value = '';
-      document.getElementById('form-song-lyrics').value = '';
-      document.getElementById('img-picker-status').textContent = '';
-      document.getElementById('label-img-picker-status').textContent = '';
-      document.getElementById('back-img-picker-status').textContent = '';
-      document.getElementById('btn-cancel-edit').style.display = 'none';
-
-      updateLivePreviewBox();
-    }
-
-    function saveSongHandler() {
-      const editKey = document.getElementById('edit-song-id').value;
-      const targetPl = parseInt(document.getElementById('form-pl-target').value);
-      const title = document.getElementById('form-song-title').value.trim();
-      const artist = document.getElementById('form-song-artist').value.trim() || 'WINTER';
-      const source = document.getElementById('form-song-source').value.trim();
-      const volume = parseFloat(document.getElementById('form-song-vol').value) || 1.0;
-      const imgScale = parseFloat(document.getElementById('form-img-scale').value) || 1.0;
-      const imgOffsetX = parseFloat(document.getElementById('form-img-ox').value) || 0.0;
-      const imgOffsetY = parseFloat(document.getElementById('form-img-oy').value) || 0.0;
-
-      const rawCover = document.getElementById('form-song-cover').value.trim();
-      const rawLabelImg = document.getElementById('form-song-label-img').value.trim();
-      const rawBackCover = document.getElementById('form-song-back-cover').value.trim();
-      
-      const cover = normalizeImageUrl(rawCover) || store[targetPl]?.cover || COVER_LIPS;
-      const labelImg = normalizeImageUrl(rawLabelImg) || '';
-      const backCover = normalizeImageUrl(rawBackCover) || '';
-      const lyricsRaw = document.getElementById('form-song-lyrics').value;
-
-      if (!title || !source) return alert('請填寫完整歌名與音訊來源！');
-
-      const songObj = {
-        title,
-        artist,
-        source,
-        volume,
-        cover,
-        labelImg,
-        backCover,
-        imgScale,
-        imgOffsetX,
-        imgOffsetY,
-        duration: 210,
-        lyrics: parseLrc(lyricsRaw)
-      };
-
-      if (editKey) {
-        const [oldPI, oldSI] = editKey.split('_').map(Number);
-        if (oldPI === targetPl) {
-          store[oldPI].songs[oldSI] = songObj;
-        } else {
-          store[oldPI].songs.splice(oldSI, 1);
-          store[targetPl].songs.push(songObj);
-        }
-      } else {
-        store[targetPl].songs.push(songObj);
-      }
-
-      persistData();
-      renderAdminTree();
-      renderUI();
-      resetSongForm();
-      alert(`歌曲《${title}》已成功儲存！`);
-    }
-
-    function addPlaylistHandler() {
-      const name = document.getElementById('admin-new-pl-name').value.trim();
-      if (!name) return alert('請輸入歌單名稱！');
-      store.push({ id: 'pl_' + Date.now(), name, cover: COVER_LIPS, songs: [] });
-      document.getElementById('admin-new-pl-name').value = '';
-      persistData();
-      renderAdminTree();
-      renderUI();
-    }
-
-    // 初始化渲染
-    renderUI();
-    
-    // 預先掛載第一首音訊
-    if (store && store[plIdx] && store[plIdx].songs && store[plIdx].songs[trackIdx]) {
-      const firstSong = store[plIdx].songs[trackIdx];
-      let firstSrc = firstSong.source.replace(/^\.\//, '');
-      if (!firstSrc.startsWith('http')) {
-        firstSrc = CD_PROJECT_BASE + encodeURIComponent(firstSrc).replace(/%2F/g, '/');
-      }
-      nativeAudio.src = firstSrc;
-      updateMediaSession(firstSong, store[plIdx]);
-    }
-  </script>
-</body>
-</html>
+    window.addEventListener('
