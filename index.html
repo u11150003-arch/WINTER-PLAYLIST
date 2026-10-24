@@ -680,7 +680,7 @@
             <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/></svg>
             <div>
               <div>Retro CD Player</div>
-              <span class="desc">前往復古CD隨身聽</span>
+              <span class="desc">前往金旼炡CD隨身聽</span>
             </div>
           </div>
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -692,6 +692,18 @@
             <div>
               <div>WINTER WILD WEST</div>
               <span class="desc">前往荒野西部視訊</span>
+            </div>
+          </div>
+          <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <!-- 新增 KARINA PLAYLIST 導覽連結 -->
+        <a class="menu-link-item" href="https://u11150003-arch.github.io/KARINA-PLAYLIST/" target="_blank" rel="noopener">
+          <div class="menu-left-content">
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            <div>
+              <div>KARINA PLAYLIST</div>
+              <span class="desc">前往劉知珉播放清單</span>
             </div>
           </div>
           <svg class="menu-arrow-svg" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
@@ -944,80 +956,83 @@
     }
 
     const LIPS_LRC_TEXT = `[00:12.21]오늘따라 건조한 느낌
-今天格外乏味
+今天格外感到乏味
 [00:18.70]목소리 쉽게 나오질 않아
 聲音不容易發出
 [00:27.10]한참을 못 했던 말 너무 많은데
-有太多一直沒說出來的話
+有太多話，藏在心底許久
 [00:34.81]내 말 잘 안 들릴까 봐 겁나
-害怕你聽不清我說的話
+害怕聽不清我說的話
 [00:41.99]긴 긴 시간이 지나간 사이
-漫長的時間已經流逝
-[00:49.65]여전이 내 맘은 그댈 향하고
-我的心依舊向著你
-[00:56.55]늦은 건 아니라 고 말해줘요
-告訴我現在還不算晚
+漫長歲月流逝之間
+[00:49.65]여전히 내 맘은 그댈 향하고
+我的心依然朝向你
+[00:56.55]늦은 건 아니라고 말해줘요
+請告訴我，現在還不算太晚
 [01:04.54]숨이 차고 조금은 떨리는데
-雖然喘不過氣，又有些顫抖
+有些喘不過氣，聲音也微微顫抖
 [01:08.47]오랜만이라 이 고백
-這是我久違的告白
+這份久違的告白
 [01:12.19]I love you
+我愛你
 [01:14.86]완벽한 타이밍 아니라도
-就算不是完美時機
+即使時機不夠完美
 [01:19.64]눈 돌리지 말고 내 입모양을 봐, babe
-不要把眼睛移開 看著我的嘴唇 寶貝
+別移開視線，看著我的唇形，親愛的
 [01:25.96]귀 기울여 듣지 말고
-不需傾聽 
+不必費力傾聽
 [01:30.47]그냥 내 입술을 읽어봐
-只要讀懂我的嘴唇就好
+只要讀懂我的唇語
 [01:34.72]아주 천천히 말해줄게
-我會慢慢地告訴你
+我會放慢語速，慢慢告訴你
 [01:46.10]긴 긴 여정이 지나간 사이
-漫長的旅程過去了
-[01:53.54]속에서만 매일 표현 못하고
-只在心裡無法表達
+漫長的旅程已過
+[01:53.54]속에서만 매일 표현 못 하고
+那些心意，日復一日只藏在心底，始終無法表達
 [02:00.18]그대도 같은 맘이라 해줘요
-告訴我你也有一樣的心情
+請告訴我，你也懷著同樣的心情
 [02:06.29]입이 말라 전보다 떨리는데
-變得乾燥比以前更加緊張
+嘴唇乾澀，心情也比以往更加緊張
 [02:12.39]오랜만이라 이 고백
-這是我久違的告白
+這份久違的告白
 [02:16.06]I love you
+我愛你
 [02:18.73]완벽한 타이밍 아니라도
-就算不是完美時機
+即使時機不夠完美
 [02:23.52]눈 돌리지 말고 내 입모양을 봐, babe
-不要把眼睛移開 看著我的嘴唇 寶貝
+別移開目光，看著我的唇形，親愛的
 [02:29.90]귀 기울여 듣지 말고
-不需傾聽
+不必費力傾聽
 [02:34.14]그냥 내 입술을 읽어봐
-只要讀懂我的嘴唇就好
+只要讀懂我的唇語
 [02:38.18]아주 천천히 말해줄게
-我會慢慢地更準確地
+我會放慢語速，慢慢地
 [02:47.16]말해줄게
-告訴你
-[02:49.82]우린 서로 가 동시에 좋아하는
-在我們互相喜歡的時刻
+準確地告訴你
+[02:49.82]우린 서로가 동시에 좋아하는
+我們在同一時刻心動
 [02:55.34]어려운 확률 속에
-在艱難的機率中
+在微乎其微的機率裡
 [02:59.02]다 들어온 것 같아
-好像一切都發生了
+好像一切都在這了
 [03:05.63]밤새워 반복해줄게
-徹夜重複此話題
+我願徹夜地訴說
 [03:10.40]크게 말 못 하고 조용히
-無法大聲說出 只能安靜地
+無法大聲說出口，只能安靜地
 [03:14.11]입가를 촉촉이 하고
-浸濕我的嘴角
+潤濕嘴唇
 [03:17.80]I love you
+我愛你
 [03:20.71]완벽한 타이밍 온 것 같아
 似乎是完美時機
 [03:25.50]진지한 내 표정 내 입모양을 봐, babe
-我誠摯的表情和嘴型 寶貝
+看著我誠摯的表情和唇形，親愛的
 [03:31.91]두 손으로 귀를 막고
 用雙手摀住耳朵
 [03:35.90]그냥 내 입술을 읽어봐
-試著讀懂我的唇語
+只要讀懂我的唇語
 [03:40.15]아주 천천히 말해줄게
-我會慢慢地告訴你`;
+我會放慢語速，慢慢告訴你`;
 
     const SPARK_LRC_TEXT = `[00:18.15]Woo-Ha
 [00:25.13]Whoo
@@ -1391,7 +1406,7 @@
 乘著夏日的速度
 [03:19.00]지금 이 순간이
 此刻的一瞬間
-[03:22.39]우릴自由롭게 해
+[03:22.39]우릴 자유롭게 해
 讓我們自由吧
 [03:25.57]손을 들어 외쳐봐
 舉起雙手，盡情呼喊
@@ -2351,7 +2366,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     let store = TWO_PLAYLISTS_DATA;
     try {
-      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v75'));
+      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v80'));
       if (Array.isArray(saved) && saved.length > 0 && saved[0].songs && saved[0].songs.length > 0) {
         store = saved;
       }
@@ -2362,7 +2377,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v75', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v80', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2424,7 +2439,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     }
 
     /* -------------------------------------------------------------
-     * 3. Three.js 3D
+     * 3. Three.js 3D (旋轉展示模式完全統一，嚴格 360 度避免半圈回彈)
      * ------------------------------------------------------------*/
     const container = document.getElementById('threejs-box');
     const scene = new THREE.Scene();
@@ -2534,12 +2549,12 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     const coverGeo = new THREE.BoxGeometry(2.0, 2.0, 0.05);
     const coverSideMat = [
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 右側
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 左側
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 頂部
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }), // 底部
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }), // 正面
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })  // 背面
     ];
     const coverMesh = new THREE.Mesh(coverGeo, coverSideMat);
     coverMesh.position.set(-0.55, 0, 0);
@@ -2784,6 +2799,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     });
     nativeAudio.addEventListener('playing', () => setPlayState(true));
     nativeAudio.addEventListener('pause', () => setPlayState(false));
+
     nativeAudio.addEventListener('ended', () => {
       playNext();
     });
@@ -3065,7 +3081,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     };
 
     document.getElementById('menu-btn-reset').onclick = () => {
-      localStorage.removeItem('winter_playlist_store_v75');
+      localStorage.removeItem('winter_playlist_store_v80');
       window.location.reload();
     };
 
