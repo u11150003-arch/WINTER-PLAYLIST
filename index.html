@@ -700,7 +700,7 @@
 
         <div class="menu-link-item" id="menu-btn-admin">
           <div class="menu-left-content">
-            <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg class="menu-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             <div>
               <div>System Access</div>
               <span class="desc">管理者設定</span>
@@ -1387,7 +1387,7 @@
 乘著夏日的速度
 [03:19.00]지금 이 순간이
 此刻的一瞬間
-[03:22.39]우릴自由롭게 해
+[03:22.39]우릴 자유롭게 해
 讓我們自由吧
 [03:25.57]손을 들어 외쳐봐
 舉起雙手，盡情呼喊
@@ -2215,9 +2215,9 @@ Audre 說，她看見你在午夜十二點後仍在外頭
             cover: "assets/soloalbum/SOLOfront_200.jpg",
             labelImg: "assets/solocd/voyage_cd_200.jpg",
             backCover: "assets/soloalbum/SOLOback_200.jpg",
-            imgScale: 1.25,
+            imgScale: 1.0,
             imgOffsetX: 0.0,
-            imgOffsetY: 0.1,
+            imgOffsetY: 0.0,
             duration: 235,
             volume: 0.65,
             lyrics: parseLrc(VOYAGE_LRC_TEXT)
@@ -2347,7 +2347,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
 
     let store = TWO_PLAYLISTS_DATA;
     try {
-      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v85'));
+      const saved = JSON.parse(localStorage.getItem('winter_playlist_store_v90'));
       if (Array.isArray(saved) && saved.length > 0 && saved[0].songs && saved[0].songs.length > 0) {
         store = saved;
       }
@@ -2358,7 +2358,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     let modelScale = parseFloat(localStorage.getItem('winter_model_scale')) || 1.0;
 
     function persistData() {
-      localStorage.setItem('winter_playlist_store_v85', JSON.stringify(store));
+      localStorage.setItem('winter_playlist_store_v90', JSON.stringify(store));
       localStorage.setItem('winter_model_scale', modelScale);
     }
 
@@ -2423,7 +2423,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     }
 
     /* -------------------------------------------------------------
-     * 3. Three.js 3D
+     * 3. Three.js 3D (降噪防過曝調校)
      * ------------------------------------------------------------*/
     const container = document.getElementById('threejs-box');
     const scene = new THREE.Scene();
@@ -2446,14 +2446,15 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     container.appendChild(renderer.domElement);
 
-    const ambLight = new THREE.AmbientLight(0xffffff, 2.2);
+    // 降低光線強度，避免白色封面在特定視角過曝死白
+    const ambLight = new THREE.AmbientLight(0xffffff, 1.45);
     scene.add(ambLight);
 
-    const dirLight = new THREE.DirectionalLight(0xffffff, 2.6);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1.8);
     dirLight.position.set(3, 4, 3.5);
     scene.add(dirLight);
 
-    const rimLight = new THREE.DirectionalLight(0xd4d4d8, 2.2);
+    const rimLight = new THREE.DirectionalLight(0xd4d4d8, 1.3);
     rimLight.position.set(4, -1.8, 2.8);
     scene.add(rimLight);
 
@@ -2532,13 +2533,14 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     const texLoader = new THREE.TextureLoader();
 
     const coverGeo = new THREE.BoxGeometry(2.0, 2.0, 0.05);
+    // 粗糙度提高至 0.55，防止白底或亮藍色封面反射眩光
     const coverSideMat = [
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.5 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.35 })
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.6 }), // 右側
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.6 }), // 左側
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.6 }), // 頂部
+      new THREE.MeshStandardMaterial({ color: 0x14151a, roughness: 0.6 }), // 底部
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55 }), // 正面
+      new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55 })  // 背面
     ];
     const coverMesh = new THREE.Mesh(coverGeo, coverSideMat);
     coverMesh.position.set(-0.55, 0, 0);
@@ -2557,7 +2559,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     discGroup.add(discMesh);
 
     const labelGeo = new THREE.CylinderGeometry(0.35, 0.35, 0.025, 32);
-    const labelMesh = new THREE.Mesh(labelGeo, new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.25 }));
+    const labelMesh = new THREE.Mesh(labelGeo, new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.45 }));
     labelMesh.rotation.x = Math.PI / 2;
     discGroup.add(labelMesh);
 
@@ -2644,7 +2646,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     }
 
     /* -------------------------------------------------------------
-     * 旋轉展示動態控制 (平穩統一 1 圈旋轉，無回彈)
+     * 旋轉展示動態控制
      * ------------------------------------------------------------*/
     let isTouching = false;
     let prevPointerX = 0;
@@ -3065,7 +3067,7 @@ Audre 說，她看見你在午夜十二點後仍在外頭
     };
 
     document.getElementById('menu-btn-reset').onclick = () => {
-      localStorage.removeItem('winter_playlist_store_v85');
+      localStorage.removeItem('winter_playlist_store_v90');
       window.location.reload();
     };
 
